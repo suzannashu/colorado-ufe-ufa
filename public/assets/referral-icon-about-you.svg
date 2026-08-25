@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<circle id="Ellipse 197" opacity="0.2" cx="30" cy="30" r="30" fill="#205C6F"/>
+<g id="person">
+<path id="Vector" d="M30 21C31.65 21 33 22.35 33 24C33 25.65 31.65 27 30 27C28.35 27 27 25.65 27 24C27 22.35 28.35 21 30 21ZM30 36C34.05 36 38.7 37.935 39 39H21C21.345 37.92 25.965 36 30 36ZM30 18C26.685 18 24 20.685 24 24C24 27.315 26.685 30 30 30C33.315 30 36 27.315 36 24C36 20.685 33.315 18 30 18ZM30 33C25.995 33 18 35.01 18 39V42H42V39C42 35.01 34.005 33 30 33Z" fill="#205C6F"/>
+</g>
+</g>
+</svg>

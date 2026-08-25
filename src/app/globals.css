@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --bc-primary: #205c6f;
+  --bc-primary-12: rgba(32, 92, 111, 0.12);
+  --bc-primary-20: rgba(32, 92, 111, 0.2);
+  --neutral-900: #1d1d1d;
+  --neutral-grey: #757575;
+  --neutral-border: #e0e0e0;
+  --neutral-input: #eeeeee;
+  --neutral-input-border: #9e9e9e;
+  --bg-page: #f3f6fa;
+  --cta-band: #d2dee2;
+  --success: #43a047;
+  --background: #f3f6fa;
+  --foreground: #1d1d1d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bc-primary: var(--bc-primary);
+  --color-page: var(--bg-page);
+  --font-sans: Avenir, "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Avenir, "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
+  font-weight: 500;
+}
+
+.font-heavy {
+  font-weight: 800;
+}
