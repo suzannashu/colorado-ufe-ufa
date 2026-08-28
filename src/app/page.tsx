@@ -76,7 +76,7 @@ export default function HomePage() {
                 title: "Start my application",
                 body: "Apply to Colorado Universal Pre-K, CCCAP, or home visiting programs from one single application.",
                 cta: "Apply now",
-                href: "/programs/upk",
+                href: "/apply",
               },
             ].map((card) => (
               <div
