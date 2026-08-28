@@ -53,10 +53,10 @@ export function SiteHeader({
 
           <div className="flex shrink-0 items-center gap-6">
             <Link
-              href="/eligibility"
+              href="/apply"
               className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
             >
-              Get started
+              Start my application
             </Link>
             <button
               type="button"
