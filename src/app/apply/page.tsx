@@ -112,20 +112,76 @@ export default function ApplyPage() {
               <Icon name="icon-east-teal-sm.svg" size={16} />
             </Button>
           </div>
-          <div className="flex flex-col gap-4">
-            <h3 className="text-base font-heavy tracking-[2.56px] text-[#1d1d1d]">
-              EARLY LEARNING &amp; CHILD CARE
-            </h3>
-            <ul className="ml-6 flex list-disc flex-col gap-3">
-              <li className="text-lg text-[#1d1d1d]">
-                <span className="font-heavy">Universal Pre-K (UPK):</span> Free
-                preschool for eligible Colorado children.
-              </li>
-              <li className="text-lg text-[#1d1d1d]">
-                <span className="font-heavy">CCCAP:</span> Helps eligible
-                families pay for child care.
-              </li>
-            </ul>
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <h3 className="text-base font-heavy tracking-[2.56px] text-[#1d1d1d]">
+                EARLY LEARNING &amp; CHILD CARE
+              </h3>
+              <ul className="flex flex-col gap-3">
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">Universal Pre-K (UPK):</span>{" "}
+                    Free preschool for eligible Colorado children.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">CCCAP:</span> Helps eligible
+                    families pay for child care.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h3 className="text-base font-heavy tracking-[2.56px] text-[#1d1d1d]">
+                HOME VISITING PROGRAMS
+              </h3>
+              <ul className="flex flex-col gap-3">
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">Parents as Teachers:</span>{" "}
+                    Provides families with information and support to help
+                    children learn and grow.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">HIPPY:</span> Helps parents
+                    prepare young children for success in school and beyond.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">
+                      Nurse-Family Partnership (NFP):
+                    </span>{" "}
+                    Provides support from trained nurses to eligible first-time
+                    parents.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">Child First:</span> Connects
+                    families with support to promote healthy child development
+                    and family well-being.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
+                  <Icon name="icon-check.svg" size={24} className="mt-1 shrink-0" />
+                  <span>
+                    <span className="font-heavy">SafeCare:</span> Helps parents
+                    build skills to keep their children safe, healthy, and
+                    thriving.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
