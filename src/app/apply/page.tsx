@@ -12,13 +12,12 @@ export default function ApplyPage() {
               ONE APPLICATION, MANY PROGRAMS
             </p>
             <h1 className="font-heavy text-[40px] leading-tight">
-              Support for your family, all in one place
+              Apply once. Get connected to more programs.
             </h1>
             <p className="text-lg">
-              Find child care help, early learning, food, health coverage, and
-              more. Answer a few simple questions and we&apos;ll show you the
-              programs you&apos;re most likely to qualify for, then help you
-              apply.
+              With one application, you can apply for Universal Pre-K, CCCAP, and
+              five home visiting programs that support Colorado families and
+              young children.
             </p>
           </div>
           <div className="flex items-center gap-10">
