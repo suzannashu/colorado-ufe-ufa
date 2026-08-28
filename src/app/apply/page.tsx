@@ -100,10 +100,11 @@ export default function ApplyPage() {
           <div className="flex items-center justify-between gap-10">
             <div>
               <h2 className="font-heavy text-2xl text-[#1d1d1d]">
-                Programs families rely on
+                One application, seven programs
               </h2>
               <p className="mt-2 text-lg text-[#1d1d1d]">
-                A quick look at a few of the programs you can apply to here.
+                Your application can connect you with programs that support
+                children and families at different stages*.
               </p>
             </div>
             <Button href="/browse" variant="ghost" size="sm">
