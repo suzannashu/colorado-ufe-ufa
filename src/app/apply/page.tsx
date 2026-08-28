@@ -8,9 +8,6 @@ export default function ApplyPage() {
       <FullBleed className="bg-[#757575] text-white">
         <div className="flex w-[684px] flex-col gap-8">
           <div className="flex flex-col gap-2">
-            <p className="text-base tracking-[2.56px]">
-              ONE APPLICATION, MANY PROGRAMS
-            </p>
             <h1 className="font-heavy text-[40px] leading-tight">
               Apply once. Get connected to more programs.
             </h1>
