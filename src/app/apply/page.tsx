@@ -117,14 +117,19 @@ export default function ApplyPage() {
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">Universal Pre-K (UPK):</span>{" "}
+                    <span className="font-heavy text-[#205c6f] underline">
+                      Universal Pre-K (UPK):
+                    </span>{" "}
                     Free preschool for eligible Colorado children.
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">CCCAP:</span> Helps eligible
+                    <span className="font-heavy text-[#205c6f] underline">
+                      CCCAP:
+                    </span>{" "}
+                    Helps eligible
                     families pay for child care.
                   </span>
                 </li>
@@ -138,7 +143,9 @@ export default function ApplyPage() {
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">Parents as Teachers:</span>{" "}
+                    <span className="font-heavy text-[#205c6f] underline">
+                      Parents as Teachers:
+                    </span>{" "}
                     Provides families with information and support to help
                     children learn and grow.
                   </span>
@@ -146,14 +153,17 @@ export default function ApplyPage() {
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">HIPPY:</span> Helps parents
+                    <span className="font-heavy text-[#205c6f] underline">
+                      HIPPY:
+                    </span>{" "}
+                    Helps parents
                     prepare young children for success in school and beyond.
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">
+                    <span className="font-heavy text-[#205c6f] underline">
                       Nurse-Family Partnership (NFP):
                     </span>{" "}
                     Provides support from trained nurses to eligible first-time
@@ -163,7 +173,10 @@ export default function ApplyPage() {
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">Child First:</span> Connects
+                    <span className="font-heavy text-[#205c6f] underline">
+                      Child First:
+                    </span>{" "}
+                    Connects
                     families with support to promote healthy child development
                     and family well-being.
                   </span>
@@ -171,13 +184,20 @@ export default function ApplyPage() {
                 <li className="flex items-start gap-3 text-lg text-[#1d1d1d]">
                   <Icon name="icon-check-green.svg" size={24} className="mt-1 shrink-0" />
                   <span>
-                    <span className="font-heavy">SafeCare:</span> Helps parents
+                    <span className="font-heavy text-[#205c6f] underline">
+                      SafeCare:
+                    </span>{" "}
+                    Helps parents
                     build skills to keep their children safe, healthy, and
                     thriving.
                   </span>
                 </li>
               </ul>
             </div>
+            <p className="text-[14px] italic text-[#1d1d1d]">
+              * Eligibility varies by program. Completing an application does
+              not guarantee enrollment.
+            </p>
           </div>
         </div>
       </section>
