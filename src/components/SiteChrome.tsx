@@ -56,7 +56,7 @@ export function SiteHeader({
               href="/eligibility"
               className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
             >
-              Get started
+              Start my application
             </Link>
             <button
               type="button"
