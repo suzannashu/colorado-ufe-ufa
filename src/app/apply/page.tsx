@@ -26,17 +26,6 @@ export default function ApplyPage() {
               Log in to my dashboard
             </Button>
           </div>
-          <div className="flex gap-10 text-sm">
-            <span className="flex items-center gap-2">
-              <Icon name="icon-watch.svg" /> Takes about 5 minutes
-            </span>
-            <span className="flex items-center gap-2">
-              <Icon name="icon-shield.svg" /> Private &amp; secure
-            </span>
-            <span className="flex items-center gap-2">
-              <Icon name="icon-support.svg" /> Free help available
-            </span>
-          </div>
         </div>
         <ImgPlaceholder />
       </FullBleed>
