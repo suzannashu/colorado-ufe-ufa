@@ -83,7 +83,7 @@ export default function ApplyPage() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-10">
+          <div className="flex items-center justify-center gap-10">
             <Button>
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
