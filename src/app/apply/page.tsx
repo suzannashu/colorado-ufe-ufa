@@ -61,11 +61,9 @@ export default function ApplyPage() {
                 body: "instead of filling out multiple applications.",
               },
               {
-                icon: "icon-eligibility.svg",
-                title: "Check your eligibility",
-                body: "Answer a few questions and see the programs you're most likely to qualify for, with reasons why.",
-                cta: "Start the screener",
-                href: "/eligibility",
+                icon: "icon-time.svg",
+                title: "Save time",
+                body: "by providing your information in one place.",
               },
               {
                 icon: "icon-apply.svg",
