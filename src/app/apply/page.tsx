@@ -19,11 +19,11 @@ export default function ApplyPage() {
           </div>
           <div className="flex items-center gap-10">
             <Button href="/eligibility">
-              Check what I qualify for
+              Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
             <Button href="/browse" variant="secondary">
-              Browse all programs
+              Log in to my dashboard
             </Button>
           </div>
           <div className="flex gap-10 text-sm">
@@ -45,10 +45,12 @@ export default function ApplyPage() {
         <div className="flex w-[1160px] flex-col gap-10">
           <div>
             <h2 className="font-heavy text-2xl text-[#1d1d1d]">
-              Three ways to get started
+              One application, more opportunities
             </h2>
             <p className="mt-2 text-lg text-[#1d1d1d]">
-              Clear next steps, wherever you are in the process.
+              You don&apos;t need to apply separately for every program. Complete
+              one application to be considered for multiple Colorado programs
+              that may support your family.
             </p>
           </div>
           <div className="grid grid-cols-3 gap-12">
