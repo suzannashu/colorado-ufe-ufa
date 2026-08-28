@@ -73,8 +73,8 @@ export default function HomePage() {
               },
               {
                 icon: "icon-apply.svg",
-                title: "Quick apply",
-                body: "Apply to a program right away as a guest, or create an account to save your progress.",
+                title: "Start my application",
+                body: "Apply to Colorado Universal Pre-K, CCCAP, or home visiting programs from one single application.",
                 cta: "Apply now",
                 href: "/programs/upk",
               },
