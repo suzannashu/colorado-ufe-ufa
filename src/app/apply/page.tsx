@@ -107,6 +107,10 @@ export default function ApplyPage() {
                 children and families at different stages*.
               </p>
             </div>
+            <Button href="/browse" variant="ghost" size="sm">
+              View all programs
+              <Icon name="icon-east-teal-sm.svg" size={16} />
+            </Button>
           </div>
           <div className="grid grid-cols-3 gap-12">
             {[
