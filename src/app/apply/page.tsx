@@ -203,7 +203,7 @@ export default function ApplyPage() {
       </section>
 
       <section className="flex justify-center py-[60px]">
-        <div className="flex w-[1170px] flex-col items-center gap-6 rounded-2xl bg-[#d2dee2] p-12 text-center">
+        <div className="flex w-[1170px] items-center justify-between gap-10 rounded-2xl bg-[#d2dee2] p-12 text-left">
           <div>
             <h2 className="font-heavy text-2xl text-[#1d1d1d]">
               Ready to see what your family may qualify for?
@@ -214,7 +214,7 @@ export default function ApplyPage() {
               progress and come back later.
             </p>
           </div>
-          <div className="flex gap-10">
+          <div className="flex shrink-0 gap-10">
             <Button href="/eligibility">
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
