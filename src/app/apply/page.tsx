@@ -56,7 +56,7 @@ export default function ApplyPage() {
           <div className="grid grid-cols-3 gap-12">
             {[
               {
-                icon: "icon-description.svg",
+                icon: "icon-apply.svg",
                 title: "Apply once",
                 body: "instead of filling out multiple applications.",
               },
