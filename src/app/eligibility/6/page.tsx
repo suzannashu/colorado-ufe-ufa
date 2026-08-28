@@ -104,7 +104,7 @@ export default function EligibilityResults() {
               </div>
               <div className="flex shrink-0 flex-col gap-2 self-start">
                 <Button href={program.href} size="sm">
-                  Quick apply
+                  Apply
                 </Button>
                 <Button href={program.href} size="sm" variant="secondary">
                   Learn more
