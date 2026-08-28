@@ -6,6 +6,7 @@ const matches = [
     title: "Colorado Universal Preschool Program (UPK)",
     categories: ["Category name", "Category name", "Category name"],
     href: "/programs/upk",
+    applyHref: "/programs/upk",
     description:
       "Colorado's Universal Preschool Program (UPK) offers up to 15 hours per week of free, high-quality preschool for children in their year before kindergarten. UPK emphasizes family choice through a \"mixed-delivery\" model, allowing families to select the best preschool setting from various program types to suit their child's needs.",
   },
@@ -103,7 +104,7 @@ export default function EligibilityResults() {
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 self-start">
-                <Button href={program.href} size="sm">
+                <Button href={program.applyHref ?? program.href} size="sm">
                   Apply
                 </Button>
                 <Button href={program.href} size="sm" variant="secondary">
