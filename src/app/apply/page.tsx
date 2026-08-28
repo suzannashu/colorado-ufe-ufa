@@ -84,11 +84,11 @@ export default function ApplyPage() {
             ))}
           </div>
           <div className="flex items-center gap-10">
-            <Button href="/eligibility">
+            <Button>
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
-            <Button href="/browse" variant="secondary">
+            <Button variant="secondary">
               Log in to my dashboard
             </Button>
           </div>
