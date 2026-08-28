@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FullBleed, PageShell } from "@/components/SiteChrome";
 import { Button, Icon, ImgPlaceholder } from "@/components/ui";
 
@@ -70,15 +69,6 @@ export default function ApplyPage() {
                     {card.title}
                   </h3>
                   <p className="text-base text-[#1d1d1d]">{card.body}</p>
-                  {card.cta && card.href && (
-                    <Link
-                      href={card.href}
-                      className="inline-flex items-center gap-2 text-base text-[#205c6f]"
-                    >
-                      {card.cta}
-                      <Icon name="icon-east-teal.svg" size={20} />
-                    </Link>
-                  )}
                 </div>
               </div>
             ))}
