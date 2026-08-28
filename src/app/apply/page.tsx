@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FullBleed, PageShell } from "@/components/SiteChrome";
-import { Button, Chip, Icon, ImgPlaceholder } from "@/components/ui";
+import { Button, Icon, ImgPlaceholder } from "@/components/ui";
 
 export default function ApplyPage() {
   return (
@@ -112,49 +112,20 @@ export default function ApplyPage() {
               <Icon name="icon-east-teal-sm.svg" size={16} />
             </Button>
           </div>
-          <div className="grid grid-cols-3 gap-12">
-            {[
-              {
-                icon: "icon-childcare.svg",
-                chip: "Child care",
-                title: "Colorado Child Care Assistance Program (CCCAP)",
-                body: "Help paying for licensed child care while you work or go to school. Covers most or all of the cost of licensed care, based on a sliding-scale copay.",
-                href: "/browse",
-              },
-              {
-                icon: "icon-prek.svg",
-                chip: "Early learning",
-                title: "Colorado Universal Pre-K",
-                body: "Free or low-cost preschool the year before kindergarten led by certified early-childhood teachers.",
-                href: "/programs/upk",
-              },
-              {
-                icon: "icon-health.svg",
-                chip: "Health",
-                title: "Nurse-Family Partnership",
-                body: "Free, voluntary community health program that pairs first-time, low-income pregnant individuals with specially trained registered nurses.",
-                href: "/refer",
-              },
-            ].map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="flex flex-col gap-9 rounded-2xl border border-[#e0e0e0] bg-white p-6"
-              >
-                <Icon name={card.icon} size={60} />
-                <div className="flex flex-col items-start gap-4">
-                  <Chip>{card.chip}</Chip>
-                  <h3 className="font-heavy text-lg text-[#1d1d1d]">
-                    {card.title}
-                  </h3>
-                  <p className="text-base text-[#1d1d1d]">{card.body}</p>
-                  <span className="inline-flex items-center gap-2 text-base text-[#205c6f]">
-                    Learn more
-                    <Icon name="icon-east-teal.svg" size={20} />
-                  </span>
-                </div>
-              </Link>
-            ))}
+          <div className="flex flex-col gap-4">
+            <h3 className="text-base font-heavy tracking-[2.56px] text-[#1d1d1d]">
+              EARLY LEARNING &amp; CHILD CARE
+            </h3>
+            <ul className="ml-6 flex list-disc flex-col gap-3">
+              <li className="text-lg text-[#1d1d1d]">
+                <span className="font-heavy">Universal Pre-K (UPK):</span> Free
+                preschool for eligible Colorado children.
+              </li>
+              <li className="text-lg text-[#1d1d1d]">
+                <span className="font-heavy">CCCAP:</span> Helps eligible
+                families pay for child care.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
