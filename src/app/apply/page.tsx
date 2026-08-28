@@ -66,19 +66,17 @@ export default function ApplyPage() {
                 body: "by providing your information in one place.",
               },
               {
-                icon: "icon-application.svg",
-                title: "Start my application",
-                body: "Apply to Colorado Universal Pre-K, CCCAP, or home visiting programs from one single application.",
-                cta: "Apply now",
-                href: "/programs/upk",
+                icon: "icon-explore.svg",
+                title: "Explore more options",
+                body: "for early learning, child care, and family support.",
               },
             ].map((card) => (
               <div
                 key={card.title}
-                className="flex flex-col gap-9 rounded-2xl border border-[#e0e0e0] bg-white p-6"
+                className="flex flex-col gap-9"
               >
                 <Icon name={card.icon} size={60} />
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
                   <h3 className="font-heavy text-lg text-[#1d1d1d]">
                     {card.title}
                   </h3>
