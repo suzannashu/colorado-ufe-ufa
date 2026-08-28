@@ -56,7 +56,7 @@ export default function ApplyPage() {
           <div className="grid grid-cols-3 gap-12">
             {[
               {
-                icon: "icon-apply.svg",
+                icon: "icon-application.svg",
                 title: "Apply once",
                 body: "instead of filling out multiple applications.",
               },
@@ -66,7 +66,7 @@ export default function ApplyPage() {
                 body: "by providing your information in one place.",
               },
               {
-                icon: "icon-apply.svg",
+                icon: "icon-application.svg",
                 title: "Start my application",
                 body: "Apply to Colorado Universal Pre-K, CCCAP, or home visiting programs from one single application.",
                 cta: "Apply now",
