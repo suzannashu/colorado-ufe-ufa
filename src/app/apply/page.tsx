@@ -56,11 +56,9 @@ export default function ApplyPage() {
           <div className="grid grid-cols-3 gap-12">
             {[
               {
-                icon: "icon-programs.svg",
-                title: "Learn about programs",
-                body: "Understand what each program offers, who qualifies, and what's expected of participants.",
-                cta: "Explore programs",
-                href: "/browse",
+                icon: "icon-description.svg",
+                title: "Apply once",
+                body: "instead of filling out multiple applications.",
               },
               {
                 icon: "icon-eligibility.svg",
@@ -87,13 +85,15 @@ export default function ApplyPage() {
                     {card.title}
                   </h3>
                   <p className="text-base text-[#1d1d1d]">{card.body}</p>
-                  <Link
-                    href={card.href}
-                    className="inline-flex items-center gap-2 text-base text-[#205c6f]"
-                  >
-                    {card.cta}
-                    <Icon name="icon-east-teal.svg" size={20} />
-                  </Link>
+                  {card.cta && card.href && (
+                    <Link
+                      href={card.href}
+                      className="inline-flex items-center gap-2 text-base text-[#205c6f]"
+                    >
+                      {card.cta}
+                      <Icon name="icon-east-teal.svg" size={20} />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
