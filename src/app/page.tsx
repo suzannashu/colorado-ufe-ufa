@@ -12,7 +12,7 @@ export default function HomePage() {
               ONE APPLICATION, MANY PROGRAMS
             </p>
             <h1 className="font-heavy text-[40px] leading-tight">
-              Support for your family, all in one place
+              Apply once. Get connected to more programs.
             </h1>
             <p className="text-lg">
               Find child care help, early learning, food, health coverage, and
