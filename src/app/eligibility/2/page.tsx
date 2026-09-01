@@ -17,16 +17,17 @@ export default function EligibilityStep2() {
               estimate is fine. Enter 0 if you have no income right now.
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex max-w-[388px] gap-6">
             <SelectField
               label="Number of adults and children in the household"
               value="3"
+              className="!min-w-0 flex-1 basis-0"
             />
             <TextField
               label="Total monthly household income (before taxes)"
               value="4,879"
               prefix={<Icon name="icon-money.svg" size={24} />}
-              className="w-[414px] shrink-0"
+              className="flex-1 basis-0"
             />
           </div>
           <div className="flex items-center justify-between pt-2">
