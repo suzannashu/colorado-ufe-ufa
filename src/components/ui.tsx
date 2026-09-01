@@ -129,18 +129,35 @@ export function TextField({
 export function SelectField({
   label,
   value,
+  options,
   className = "",
 }: {
   label: string;
   value: string;
+  options?: string[];
   className?: string;
 }) {
   return (
     <label className={`flex min-w-[240px] flex-1 flex-col justify-between gap-2 ${className}`}>
       <span className="text-lg text-[#1d1d1d]">{label}</span>
-      <div className="flex items-center justify-between border-b border-[#9e9e9e] bg-[#eee] p-4">
-        <span className="text-base text-[#1d1d1d]">{value}</span>
-        <Icon name="icon-chevron-down-field.svg" size={24} />
+      <div className="relative flex items-center justify-between border-b border-[#9e9e9e] bg-[#eee] p-4">
+        {options ? (
+          <select
+            defaultValue={value}
+            className="w-full appearance-none bg-transparent pr-8 text-base text-[#1d1d1d] outline-none"
+          >
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <span className="text-base text-[#1d1d1d]">{value}</span>
+        )}
+        <span className="pointer-events-none absolute right-4">
+          <Icon name="icon-chevron-down-field.svg" size={24} />
+        </span>
       </div>
     </label>
   );
