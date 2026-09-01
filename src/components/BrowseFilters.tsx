@@ -25,7 +25,6 @@ const MENUS: Record<string, string[]> = {
 };
 
 const FILTERS = [
-  { id: "all", label: "All" },
   { id: "age", label: "Child’s age" },
   { id: "county", label: "County" },
   { id: "financial", label: "Financial help" },
@@ -68,21 +67,18 @@ export function BrowseFilters() {
   }
 
   return (
-    <div ref={rootRef} className="relative flex flex-wrap gap-2">
+    <div ref={rootRef} className="relative flex flex-wrap items-center gap-2">
+      <span className="text-sm text-[#1d1d1d]">Filter by</span>
       {FILTERS.map((filter) => {
-        const isAll = filter.id === "all";
         const isOpen = open === filter.id;
         const hasSelection = (selected[filter.id] ?? []).length > 0;
-        const active = isAll ? open === null : isOpen || hasSelection;
+        const active = isOpen || hasSelection;
 
         return (
           <div key={filter.id} className="relative">
             <button
               type="button"
-              onClick={() => {
-                if (isAll) setOpen(null);
-                else setOpen(isOpen ? null : filter.id);
-              }}
+              onClick={() => setOpen(isOpen ? null : filter.id)}
               className={`rounded-full border border-[#e0e0e0] px-4 py-2.5 text-sm text-[#1d1d1d] ${
                 active ? "bg-[rgba(32,92,111,0.2)]" : "bg-white"
               }`}
@@ -90,7 +86,7 @@ export function BrowseFilters() {
               {filter.label}
             </button>
 
-            {!isAll && isOpen && MENUS[filter.id] ? (
+            {isOpen && MENUS[filter.id] ? (
               <div className="absolute left-0 top-[calc(100%+8px)] z-20 flex w-[280px] flex-col gap-2 rounded-[6px] border border-[#e0e0e0] bg-white px-4 py-3 shadow-sm">
                 {MENUS[filter.id].map((option) => {
                   const checked = (selected[filter.id] ?? []).includes(option);
