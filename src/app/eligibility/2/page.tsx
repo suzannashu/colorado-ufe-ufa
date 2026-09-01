@@ -17,7 +17,7 @@ export default function EligibilityStep2() {
               estimate is fine. Enter 0 if you have no income right now.
             </p>
           </div>
-          <div className="flex max-w-[388px] gap-6">
+          <div className="flex gap-6">
             <SelectField
               label="Number of adults and children in the household"
               value="3"
