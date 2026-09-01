@@ -25,7 +25,7 @@ export function SpecialistShell({
           </div>
           <nav className="relative flex flex-col gap-6 px-4">
             {active === "forms" ? (
-              <div className="absolute left-0 top-[38px] h-12 w-[239px] rounded-r-full bg-[#205c6f] opacity-10" />
+              <div className="absolute -left-4 -top-1.5 h-12 w-[239px] rounded-r-full bg-[#205c6f] opacity-10" />
             ) : null}
             <Link
               href="/refer/admin-forms-index"
