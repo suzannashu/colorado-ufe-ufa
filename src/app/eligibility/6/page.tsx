@@ -15,8 +15,7 @@ const matches = [
   {
     title: "Colorado Universal Preschool Program (UPK)",
     categories: ["Category name", "Category name", "Category name"],
-    href: "/programs/upk",
-    applyHref: "/programs/upk",
+    applyHref: "/apply",
     quickApply: true,
     description: (
       <>
