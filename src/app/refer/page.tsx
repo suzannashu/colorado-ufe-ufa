@@ -88,10 +88,15 @@ export default function ReferPage() {
               Colorado&apos;s home visiting programs with one short form.
             </p>
           </div>
-          <Button href="/refer/form" className="w-fit !px-4">
-            Start a referral
-            <Icon name="icon-east-white-3.svg" size={20} />
-          </Button>
+          <div className="flex flex-wrap gap-4">
+            <Button href="/refer/form" className="w-fit !px-4">
+              Start a referral
+              <Icon name="icon-east-white-3.svg" size={20} />
+            </Button>
+            <Button href="/refer/login" variant="secondary" className="w-fit !px-4">
+              Log in
+            </Button>
+          </div>
         </div>
         <ImgPlaceholder />
       </FullBleed>
