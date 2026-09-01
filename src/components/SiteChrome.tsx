@@ -56,7 +56,7 @@ export function SiteHeader({
               href="/apply"
               className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
             >
-              Start my application
+              Quick apply
             </Link>
             <button
               type="button"
