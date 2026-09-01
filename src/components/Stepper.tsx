@@ -1,15 +1,14 @@
 const steps = [
-  { n: 1, label: "About you" },
-  { n: 2, label: "Your household" },
-  { n: 3, label: "Children" },
-  { n: 4, label: "Care needs" },
+  { n: 1, label: "Your household" },
+  { n: 2, label: "Children" },
+  { n: 3, label: "Care needs" },
 ] as const;
 
-export function Stepper({ current }: { current: 1 | 2 | 3 | 4 }) {
+export function Stepper({ current }: { current: 1 | 2 | 3 }) {
   return (
     <div className="relative mb-6 h-[109px] w-full max-w-[870px]">
       <div className="absolute left-[70px] right-[70px] top-[30px] flex items-center">
-        {[0, 1, 2].map((i) => (
+        {[0, 1].map((i) => (
           <div key={i} className="h-px flex-1 bg-[#e0e0e0]" />
         ))}
       </div>

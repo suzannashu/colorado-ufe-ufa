@@ -31,7 +31,7 @@ export function CareNeedsForm({
     <PageShell active="eligibility" borderedHeader className="bg-white">
       <section className="flex flex-col items-center py-10">
         <div className="flex w-full max-w-[853px] flex-col gap-6">
-          <Stepper current={4} />
+          <Stepper current={3} />
           <div className="flex flex-col gap-3">
             <h1 className="font-heavy text-[28px] leading-10 text-black">
               What kind of care do you need?

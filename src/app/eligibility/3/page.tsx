@@ -33,7 +33,7 @@ export default function EligibilityStep3() {
     <PageShell active="eligibility" borderedHeader className="bg-white">
       <section className="flex flex-col items-center py-10">
         <div className="flex w-full max-w-[853px] flex-col gap-6">
-          <Stepper current={3} />
+          <Stepper current={2} />
           <div className="flex flex-col gap-3">
             <h1 className="font-heavy text-[28px] leading-10 text-black">
               Add your children
