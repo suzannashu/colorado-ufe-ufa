@@ -26,7 +26,6 @@ export default function EligibilityStep2() {
             />
             <TextField
               label="Total monthly household income (before taxes)"
-              value="4,879"
               prefix={<Icon name="icon-money.svg" size={24} />}
               className="flex-1 basis-0"
             />
