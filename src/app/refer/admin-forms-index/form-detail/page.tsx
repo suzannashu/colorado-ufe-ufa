@@ -135,22 +135,19 @@ export default function HomeVisitingReferralFormPage() {
             </p>
           </div>
 
-          <div className="flex justify-end pb-4">
+          <div className="flex items-center justify-between pb-4">
+            <Link
+              href="/refer"
+              className="text-sm text-[#205c6f] underline underline-offset-2"
+            >
+              Back to landing page
+            </Link>
             <Button type="submit" size="sm">
               Submit
             </Button>
           </div>
         </div>
       </form>
-
-      <div className="px-4 pb-6">
-        <Link
-          href="/refer"
-          className="text-sm text-[#205c6f] underline underline-offset-2"
-        >
-          Back to landing page
-        </Link>
-      </div>
     </SpecialistShell>
   );
 }
