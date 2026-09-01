@@ -142,6 +142,15 @@ export default function HomeVisitingReferralFormPage() {
           </div>
         </div>
       </form>
+
+      <div className="px-4 pb-6">
+        <Link
+          href="/refer"
+          className="text-sm text-[#205c6f] underline underline-offset-2"
+        >
+          Back to landing page
+        </Link>
+      </div>
     </SpecialistShell>
   );
 }
