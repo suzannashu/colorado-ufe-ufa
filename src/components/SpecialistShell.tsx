@@ -17,9 +17,9 @@ export function SpecialistShell({
             <Link href="/refer/forms" className="block px-1 py-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/logo-bridgecare.svg"
+                src="/assets/bc-logo.svg"
                 alt="BridgeCare"
-                className="h-7 w-[145px] object-contain object-left"
+                className="h-7 w-[146px] object-contain object-left"
               />
             </Link>
           </div>
