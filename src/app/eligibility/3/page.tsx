@@ -1,6 +1,6 @@
 import { PageShell } from "@/components/SiteChrome";
 import { Stepper } from "@/components/Stepper";
-import { Button, Counter, Icon } from "@/components/ui";
+import { Button, Icon } from "@/components/ui";
 
 function ChildRow({ label }: { label: string }) {
   return (
@@ -43,15 +43,13 @@ export default function EligibilityStep3() {
               your care.
             </p>
           </div>
-          <p className="text-lg text-black">Children in your care</p>
-          <Counter value={2} />
           <ChildRow label="Child 1" />
           <ChildRow label="Child 2" />
           <Button variant="ghost" size="sm" className="self-start bg-[#f3f6fa]">
             <Icon name="icon-add-teal.svg" size={16} />
             Add a child
           </Button>
-          <div className="flex items-center justify-between pt-2">
+          <div className="flex items-center justify-between py-10">
             <Button href="/eligibility/2" variant="secondary">
               Back
             </Button>

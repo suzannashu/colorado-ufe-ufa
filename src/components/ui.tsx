@@ -126,6 +126,26 @@ export function TextField({
   );
 }
 
+export function SelectField({
+  label,
+  value,
+  className = "",
+}: {
+  label: string;
+  value: string;
+  className?: string;
+}) {
+  return (
+    <label className={`flex min-w-[240px] flex-1 flex-col justify-between gap-2 ${className}`}>
+      <span className="text-lg text-[#1d1d1d]">{label}</span>
+      <div className="flex items-center justify-between border-b border-[#9e9e9e] bg-[#eee] p-4">
+        <span className="text-base text-[#1d1d1d]">{value}</span>
+        <Icon name="icon-chevron-down-field.svg" size={24} />
+      </div>
+    </label>
+  );
+}
+
 export function Counter({ value = 2 }: { value?: number }) {
   return (
     <div className="flex items-center gap-6">

@@ -1,6 +1,6 @@
 import { PageShell } from "@/components/SiteChrome";
 import { Stepper } from "@/components/Stepper";
-import { Button, Counter, Icon, TextField } from "@/components/ui";
+import { Button, Icon, SelectField, TextField } from "@/components/ui";
 
 export default function EligibilityStep2() {
   return (
@@ -13,20 +13,22 @@ export default function EligibilityStep2() {
               Tell us about your household
             </h1>
             <p className="text-lg leading-6 text-black">
-              Include everyone who lives with you and shares income.
+              Include everyone who lives with you and shares income. A rough
+              estimate is fine. Enter 0 if you have no income right now.
             </p>
           </div>
-          <p className="text-lg text-black">
-            People in your household (count all adults and children who live in
-            the home)
-          </p>
-          <Counter value={2} />
-          <TextField
-            label="Total monthly household income (before taxes)"
-            value="4,879"
-            prefix={<Icon name="icon-money.svg" size={24} />}
-            hint="A rough estimate is fine. Enter 0 if you have no income right now."
-          />
+          <div className="flex gap-6">
+            <SelectField
+              label="Number of adults and children in the household"
+              value="3"
+            />
+            <TextField
+              label="Total monthly household income (before taxes)"
+              value="4,879"
+              prefix={<Icon name="icon-money.svg" size={24} />}
+              className="w-[414px] shrink-0"
+            />
+          </div>
           <div className="flex items-center justify-between pt-2">
             <Button href="/eligibility" variant="secondary">
               Back

@@ -1,12 +1,6 @@
-import { CareNeedsForm } from "@/components/CareNeedsForm";
+import { redirect } from "next/navigation";
 
-/** Screener-5: care-needs with “Help me decide” selected. */
-export default function EligibilityStep5() {
-  return (
-    <CareNeedsForm
-      initialSelected={["Help me decide"]}
-      backHref="/eligibility/4"
-      nextHref="/eligibility/6"
-    />
-  );
+/** Legacy route — care needs is now step 4. */
+export default function EligibilityStep5Redirect() {
+  redirect("/eligibility/4");
 }
