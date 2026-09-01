@@ -130,7 +130,7 @@ export default function EligibilityResults() {
   return (
     <PageShell active="eligibility" borderedHeader className="bg-white">
       <section className="flex flex-col items-center py-10">
-        <div className="flex w-full max-w-[853px] flex-col gap-6">
+        <div className="flex w-full max-w-[900px] flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
               Cherie, based on your answers, you may qualify for 3 programs.
