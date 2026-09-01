@@ -20,8 +20,8 @@ export default function EligibilityStep2() {
           <div className="flex gap-6">
             <SelectField
               label="Number of adults and children in the household"
-              value="3"
-              options={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"]}
+              value="0"
+              options={["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"]}
               className="!min-w-0 flex-1 basis-0"
             />
             <TextField
