@@ -118,7 +118,11 @@ function ProgramCard({
         {quickApply ? (
           <Button href={applyHref ?? href ?? "/browse"} size="sm">
             Quick apply
-            <Icon name="icon-arrow-right-alt.svg" size={16} className="invert" />
+            <Icon
+              name="icon-arrow-right-alt.svg"
+              size={16}
+              className="brightness-0 invert"
+            />
           </Button>
         ) : null}
       </div>
