@@ -48,7 +48,9 @@ export function SiteHeader({
                 </Link>
               ),
             )}
-            <span>Sign in</span>
+              <Link href="/refer/login" className="hover:underline">
+                Sign in
+              </Link>
           </nav>
 
           <div className="flex shrink-0 items-center gap-6">
