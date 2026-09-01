@@ -7,7 +7,7 @@ export default function EligibilityStep2() {
     <PageShell active="eligibility" borderedHeader className="bg-white">
       <section className="flex flex-col items-center py-10">
         <div className="flex w-full max-w-[853px] flex-col gap-6">
-          <Stepper current={1} />
+          <Stepper current={2} />
           <div className="flex flex-col gap-3">
             <h1 className="font-heavy text-[28px] leading-10 text-black">
               Tell us about your household
@@ -31,7 +31,9 @@ export default function EligibilityStep2() {
             />
           </div>
           <div className="flex items-center justify-between pt-2">
-            <span />
+            <Button href="/eligibility" variant="secondary">
+              Back
+            </Button>
             <Button href="/eligibility/3">Continue</Button>
           </div>
         </div>
