@@ -49,8 +49,8 @@ function ChildRow({
 }
 
 export function ChildrenList() {
-  const [children, setChildren] = useState([0, 1]);
-  const [nextId, setNextId] = useState(2);
+  const [children, setChildren] = useState([0]);
+  const [nextId, setNextId] = useState(1);
 
   function addChild() {
     setChildren((prev) => [...prev, nextId]);
