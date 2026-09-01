@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SpecialistShell } from "@/components/SpecialistShell";
 import { Button, Icon } from "@/components/ui";
 
@@ -32,12 +33,18 @@ export default function ReferFormsPage() {
       </div>
 
       <div className="relative overflow-hidden p-4">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/forms-index.png"
-          alt="Table of referral form submissions"
-          className="w-full max-w-none"
-        />
+        <Link
+          href="/refer/admin-forms-index/home-visiting"
+          className="block"
+          aria-label="View home visiting referral form"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/forms-index.png"
+            alt="Table of referral form submissions"
+            className="w-full max-w-none"
+          />
+        </Link>
       </div>
     </SpecialistShell>
   );
