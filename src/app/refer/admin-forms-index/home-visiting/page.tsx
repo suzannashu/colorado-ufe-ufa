@@ -27,7 +27,7 @@ export default function HomeVisitingReferralFormPage() {
       <div className="border-b border-[#e0e0e0] bg-white px-5 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/refer/forms" aria-label="Back to forms">
+            <Link href="/refer/admin-forms-index" aria-label="Back to forms">
               <Icon name="icon-back-circle.svg" size={48} />
             </Link>
             <h1 className="font-heavy text-2xl text-[#1d1d1d]">

@@ -41,7 +41,7 @@ export default function ReferLoginPage() {
             <p className="text-right text-base text-[#205c6f] underline">
               Forgot password?
             </p>
-            <Button href="/refer/forms" className="w-full justify-center">
+            <Button href="/refer/admin-forms-index" className="w-full justify-center">
               Log in
             </Button>
           </div>
@@ -49,7 +49,7 @@ export default function ReferLoginPage() {
           <hr className="border-[#e0e0e0]" />
 
           <div className="mx-auto flex w-full max-w-[334px] flex-col gap-[18px]">
-            <Button href="/refer/forms" variant="secondary" className="w-full justify-center">
+            <Button href="/refer/admin-forms-index" variant="secondary" className="w-full justify-center">
               Request a one-time login code
             </Button>
             <SsoButton icon="icon-google.svg" label="Sign in with Google" />
@@ -65,7 +65,7 @@ export default function ReferLoginPage() {
 function SsoButton({ icon, label }: { icon: string; label: string }) {
   return (
     <Link
-      href="/refer/forms"
+      href="/refer/admin-forms-index"
       className="flex h-14 w-full items-center justify-center gap-3 rounded border border-[#9e9e9e] bg-white px-6 py-3 text-base text-[#424242]"
     >
       <Icon name={icon} size={16} />
