@@ -22,7 +22,7 @@ function ChildRow({
         <div className="relative flex h-14 w-[220px] flex-col justify-center border-b border-[#9e9e9e] bg-[#eee] px-4 py-2">
           <span className="text-xs text-[#1d1d1d]">Age</span>
           <select
-            defaultValue="3 years"
+            defaultValue="0 years"
             className="w-full appearance-none bg-transparent pr-8 text-base text-[#1d1d1d] outline-none"
           >
             {AGE_OPTIONS.map((age) => (
