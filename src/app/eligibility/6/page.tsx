@@ -137,7 +137,7 @@ export default function EligibilityResults() {
         <div className="flex w-full max-w-[900px] flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
-              Cherie, based on your answers, you may qualify for 3 programs.
+              Based on your answers, you may qualify for 3 programs.
             </h1>
             <p className="text-lg leading-6 text-[#1d1d1d]">
               These are estimates to help you decide where to apply, not an
