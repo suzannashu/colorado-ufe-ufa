@@ -8,7 +8,7 @@ export default function ReferFormsPage() {
         <div className="flex items-center justify-between">
           <h1 className="font-heavy text-[28px] text-[#1d1d1d]">Forms</h1>
           <Button href="/refer/forms/home-visiting" size="sm">
-            <Icon name="icon-add.svg" size={16} className="invert" />
+            <Icon name="icon-add.svg" size={16} className="brightness-0 invert" />
             New form
           </Button>
         </div>
