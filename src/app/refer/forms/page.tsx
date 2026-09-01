@@ -34,8 +34,8 @@ export default function ReferFormsPage() {
       <div className="relative overflow-hidden p-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/forms-index-fpo.png"
-          alt="Forms table placeholder"
+          src="/assets/forms-index.png"
+          alt="Table of referral form submissions"
           className="w-full max-w-none"
         />
       </div>
