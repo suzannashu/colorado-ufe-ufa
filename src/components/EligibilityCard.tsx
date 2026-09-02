@@ -40,11 +40,13 @@ export function EligibilityCard({
           >
             <span className="text-sm text-black">Apply to this program</span>
             {isChecked ? (
-              <span className="flex size-7 items-center justify-center rounded-[2px] bg-[#205c6f] text-sm text-white">
+              <span className="flex size-7 items-center justify-center rounded-[2px] bg-[#205c6f] text-base font-bold text-white">
                 ✓
               </span>
             ) : (
-              <Icon name="icon-checkbox.svg" size={28} alt="Unchecked" />
+              <span className="flex size-7 items-center justify-center">
+                <Icon name="icon-checkbox.svg" size={28} alt="Unchecked" />
+              </span>
             )}
           </button>
         ) : null}

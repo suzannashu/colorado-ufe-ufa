@@ -75,16 +75,16 @@ export default function ApplyProgramsPage() {
         title="SafeCare"
         beneficiary="Karla Abrams"
         role="Parent/Guardian"
-        applyChecked={false}
-        expanded={false}
+        applyChecked
+        expanded
         criteria={safeCareCriteria}
       />
       <EligibilityCard
         title="Child First"
         beneficiary="Karla Abrams"
         role="Parent/Guardian"
-        applyChecked={false}
-        expanded={false}
+        applyChecked
+        expanded
         criteria={loremCriteria}
       />
 
@@ -105,7 +105,7 @@ export default function ApplyProgramsPage() {
         role="Child"
         birthDate="January 1, 2024"
         showApplyCheckbox={false}
-        expanded
+        expanded={false}
         criteria={notEligibleUpkCriteria}
       />
       <EligibilityCard
