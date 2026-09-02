@@ -17,11 +17,11 @@ export default function ApplyPage() {
             </p>
           </div>
           <div className="flex items-center gap-10">
-            <Button href="/eligibility">
+            <Button href="/apply/register">
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
-            <Button href="/browse" variant="secondary">
+            <Button href="/apply/register" variant="secondary">
               Log in to my dashboard
             </Button>
           </div>
@@ -74,11 +74,11 @@ export default function ApplyPage() {
             ))}
           </div>
           <div className="flex items-center justify-center gap-10">
-            <Button>
+            <Button href="/apply/register">
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
-            <Button variant="secondary">
+            <Button href="/apply/register" variant="secondary">
               Log in to my dashboard
             </Button>
           </div>
@@ -205,7 +205,7 @@ export default function ApplyPage() {
             </p>
           </div>
           <div className="flex shrink-0 gap-10">
-            <Button href="/eligibility">
+            <Button href="/apply/register">
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
