@@ -58,7 +58,7 @@ export default function BeforeYouApplyPage() {
             key={doc.title}
             className="flex gap-4 rounded border border-[#e0e0e0] bg-white p-4"
           >
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#f3f6fa]">
+            <div className="flex size-8 shrink-0 items-center justify-center">
               <Icon name={doc.icon} size={24} alt="" />
             </div>
             <div className="text-lg text-[#1d1d1d]">
