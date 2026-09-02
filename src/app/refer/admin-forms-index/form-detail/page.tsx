@@ -65,14 +65,32 @@ export default function HomeVisitingReferralFormPage() {
               </h3>
               <Icon name="icon-emergency.svg" size={24} />
             </div>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid grid-cols-2 items-start gap-10">
               <TextField label="Parent / guardian name" />
               <TextField label="Phone" />
               <TextField label="Email (optional)" />
               <SelectField label="County" value="" />
               <TextField label="Zip code" />
-              <SelectField label="Preferred language" value="" />
-              <SelectField label="Best time to reach them" value="No preference" />
+              <SelectField
+                label="Preferred language"
+                value="English"
+                options={[
+                  "English",
+                  "Chinese",
+                  "Hindi",
+                  "Korean",
+                  "Russian",
+                  "Spanish",
+                  "Tagalog",
+                  "Tamil",
+                  "Vietnamese",
+                ]}
+              />
+              <SelectField
+                label="Best time to reach them"
+                value="No preference"
+                options={["No preference", "Morning", "Afternoon", "Evening"]}
+              />
               <TextField
                 label="Children’s ages"
                 value=""
