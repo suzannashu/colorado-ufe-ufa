@@ -114,6 +114,11 @@ export default function DashboardApplicationsPage() {
                         : "icon-cancel.svg"
                     }
                     size={24}
+                    className={
+                      row.eligible
+                        ? ""
+                        : "[filter:brightness(0)_saturate(100%)_invert(27%)_sepia(75%)_saturate(2648%)_hue-rotate(353deg)_brightness(93%)_contrast(93%)]"
+                    }
                   />
                 </td>
                 <td className="px-4 py-4">{row.updated}</td>
