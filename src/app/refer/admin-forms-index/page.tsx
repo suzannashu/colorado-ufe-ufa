@@ -7,8 +7,8 @@ export default function ReferFormsPage() {
       <div className="border-b border-[#e0e0e0] bg-white px-5 py-3">
         <div className="flex items-center justify-between">
           <h1 className="font-heavy text-[28px] text-[#1d1d1d]">Forms</h1>
-          <Button href="/refer/forms/home-visiting" size="sm">
-            <Icon name="icon-add.svg" size={16} className="invert" />
+          <Button href="/refer/admin-forms-index/form-detail" size="sm">
+            <Icon name="icon-add.svg" size={16} className="brightness-0 invert" />
             New form
           </Button>
         </div>
@@ -34,8 +34,8 @@ export default function ReferFormsPage() {
       <div className="relative overflow-hidden p-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/forms-index-fpo.png"
-          alt="Forms table placeholder"
+          src="/assets/forms-index.png"
+          alt="Table of referral form submissions"
           className="w-full max-w-none"
         />
       </div>

@@ -27,7 +27,7 @@ export default function HomeVisitingReferralFormPage() {
       <div className="border-b border-[#e0e0e0] bg-white px-5 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/refer/forms" aria-label="Back to forms">
+            <Link href="/refer/admin-forms-index" aria-label="Back to forms">
               <Icon name="icon-back-circle.svg" size={48} />
             </Link>
             <h1 className="font-heavy text-2xl text-[#1d1d1d]">
@@ -65,14 +65,32 @@ export default function HomeVisitingReferralFormPage() {
               </h3>
               <Icon name="icon-emergency.svg" size={24} />
             </div>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid grid-cols-2 items-start gap-10">
               <TextField label="Parent / guardian name" />
               <TextField label="Phone" />
               <TextField label="Email (optional)" />
               <SelectField label="County" value="" />
               <TextField label="Zip code" />
-              <SelectField label="Preferred language" value="" />
-              <SelectField label="Best time to reach them" value="No preference" />
+              <SelectField
+                label="Preferred language"
+                value="English"
+                options={[
+                  "English",
+                  "Chinese",
+                  "Hindi",
+                  "Korean",
+                  "Russian",
+                  "Spanish",
+                  "Tagalog",
+                  "Tamil",
+                  "Vietnamese",
+                ]}
+              />
+              <SelectField
+                label="Best time to reach them"
+                value="No preference"
+                options={["No preference", "Morning", "Afternoon", "Evening"]}
+              />
               <TextField
                 label="Children’s ages"
                 value=""
@@ -135,7 +153,13 @@ export default function HomeVisitingReferralFormPage() {
             </p>
           </div>
 
-          <div className="flex justify-end pb-4">
+          <div className="flex items-center justify-between pb-4">
+            <Link
+              href="/refer"
+              className="text-sm text-[#205c6f] underline underline-offset-2"
+            >
+              Back to landing page
+            </Link>
             <Button type="submit" size="sm">
               Submit
             </Button>
