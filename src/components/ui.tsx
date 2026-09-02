@@ -153,7 +153,9 @@ export function SelectField({
             ))}
           </select>
         ) : (
-          <span className="text-base text-[#1d1d1d]">{value}</span>
+          <span className="min-h-6 text-base leading-6 text-[#1d1d1d]">
+            {value}
+          </span>
         )}
         <span className="pointer-events-none absolute right-4">
           <Icon name="icon-chevron-down-field.svg" size={24} />
