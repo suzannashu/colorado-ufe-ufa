@@ -1,5 +1,5 @@
 import { ApplicationFlowShell } from "@/components/ApplicationFlowShell";
-import { Icon } from "@/components/ui";
+import { Button, Icon } from "@/components/ui";
 
 const documents = [
   {
@@ -48,9 +48,6 @@ export default function BeforeYouApplyPage() {
     <ApplicationFlowShell
       title="Before you apply"
       subtitle="Different programs require different types of documents. If applying for Universal Pre-K and/or Colorado Child Care Assistance Program (CCCAP), you may be asked to share some documents to confirm your family's and/or child's eligibility. Here are examples of documents you may be asked to provide. We'll let you know which documents, if any, you need to submit with your application."
-      backHref="/apply/register"
-      continueHref="/apply/pre-app"
-      continueLabel="Continue"
     >
       <div className="flex flex-col gap-4">
         {documents.map((doc) => (
@@ -72,6 +69,12 @@ export default function BeforeYouApplyPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center py-10">
+        <Button href="/apply/pre-app">
+          Start my application
+          <Icon name="icon-east-white-3.svg" size={20} />
+        </Button>
       </div>
     </ApplicationFlowShell>
   );
