@@ -1,82 +1,7 @@
 import { ReactNode } from "react";
 import { PageShell } from "@/components/SiteChrome";
-import { Button, Chip, Icon } from "@/components/ui";
-
-type Criterion = { text: string; met: boolean };
-
-function EligibilityCard({
-  title,
-  beneficiary,
-  role,
-  birthDate,
-  applyChecked,
-  showApplyCheckbox = true,
-  expanded,
-  criteria,
-}: {
-  title: string;
-  beneficiary: string;
-  role: string;
-  birthDate?: string;
-  applyChecked?: boolean;
-  showApplyCheckbox?: boolean;
-  expanded: boolean;
-  criteria?: Criterion[];
-}) {
-  return (
-    <article className="flex flex-col gap-3 rounded-2xl border border-[#e0e0e0] bg-white p-6">
-      <div className="flex items-start justify-between gap-4">
-        <h2 className="font-heavy text-lg text-[#1d1d1d]">{title}</h2>
-        {showApplyCheckbox ? (
-          <label className="flex shrink-0 items-center gap-3">
-            <span className="text-sm text-black">Apply to this program</span>
-            {applyChecked ? (
-              <Icon name="icon-checkbox.svg" size={28} alt="" />
-            ) : (
-              <span className="size-7 rounded border-2 border-[#9e9e9e]" />
-            )}
-          </label>
-        ) : null}
-      </div>
-      <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-3">
-          <span className="text-base text-black">{beneficiary}</span>
-          <Chip>{role}</Chip>
-        </div>
-        {birthDate ? (
-          <p className="text-sm text-black">{birthDate}</p>
-        ) : null}
-      </div>
-      <hr className="border-[#e0e0e0]" />
-      <div className="flex flex-col gap-3">
-        <button
-          type="button"
-          className="flex items-center gap-2 text-base text-[#205c6f]"
-        >
-          View eligibility details
-          <Icon
-            name="icon-chevron-down.svg"
-            size={24}
-            className={expanded ? "rotate-180" : ""}
-          />
-        </button>
-        {expanded && criteria ? (
-          <div className="flex flex-col gap-2 rounded-lg bg-[#f3f6fa] p-3">
-            {criteria.map((c) => (
-              <div key={c.text} className="flex items-center gap-2">
-                <Icon
-                  name={c.met ? "icon-check-green.svg" : "icon-cancel.svg"}
-                  size={24}
-                />
-                <p className="text-base text-[#1d1d1d]">{c.text}</p>
-              </div>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    </article>
-  );
-}
+import { Button } from "@/components/ui";
+import { EligibilityCard, type Criterion } from "@/components/EligibilityCard";
 
 export default function ApplyProgramsPage() {
   const upkCriteria: Criterion[] = [
@@ -91,6 +16,14 @@ export default function ApplyProgramsPage() {
       met: true,
     },
     { text: "Verified state residency and identity", met: true },
+  ];
+
+  const safeCareCriteria: Criterion[] = [
+    { text: "At least one child age 5 or younger in the home.", met: true },
+    {
+      text: "Must live within an active SafeCare Colorado service area or participating county program.",
+      met: true,
+    },
   ];
 
   const notEligibleUpkCriteria: Criterion[] = [
@@ -129,6 +62,7 @@ export default function ApplyProgramsPage() {
         role="Parent/Guardian"
         applyChecked={false}
         expanded={false}
+        criteria={safeCareCriteria}
       />
       <EligibilityCard
         title="Child First"
@@ -190,8 +124,8 @@ function ApplyProgramsShell({ children }: { children: ReactNode }) {
         <div className="flex w-full max-w-[853px] flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
-              Cherie, based on your answers, your family and/or children are
-              eligible for the following programs.
+              Based on your answers, your family and/or children are eligible
+              for the following programs.
             </h1>
           </div>
           {children}
