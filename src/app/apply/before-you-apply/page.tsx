@@ -5,22 +5,41 @@ const documents = [
   {
     title: "Child's Information",
     icon: "face.svg",
-    body: "For example: Proof of age (e.g., birth certificate, passport, hospital records)",
+    lead: "For example:",
+    items: ["Proof of age (e.g., birth certificate, passport, hospital records)"],
   },
   {
     title: "Household Income",
     icon: "paid.svg",
-    body: "For example: Recent pay stubs (typically from the last 30 days), Tax return (most recent federal or state), W-2 forms, Social Security income statements (if applicable), Unemployment benefits documentation (if applicable), Self-employment income documentation (e.g., 1099 forms, profit/loss statements)",
+    lead: "For example:",
+    items: [
+      "Recent pay stubs (typically from the last 30 days)",
+      "Tax return (most recent federal or state)",
+      "W-2 forms",
+      "Social Security income statements (if applicable)",
+      "Unemployment benefits documentation (if applicable)",
+      "Self-employment income documentation (e.g., 1099 forms, profit/loss statements)",
+    ],
   },
   {
     title: "Residency or Guardianship",
     icon: "description.svg",
-    body: "For example: Proof of Colorado residency (e.g., utility bill, lease agreement, driver's license), Legal guardianship or custody documents (if the applicant is not the parent)",
+    lead: "For example:",
+    items: [
+      "Proof of Colorado residency (e.g., utility bill, lease agreement, driver's license)",
+      "Legal guardianship or custody documents (if the applicant is not the parent)",
+    ],
   },
   {
     title: "Other Qualifying Factors",
     icon: "note_add.svg",
-    body: "You may also be asked to document any of the following if they apply to your child: Individualized Education Program (IEP), Homelessness or housing insecurity, Foster care or kinship care, Language or developmental delays",
+    lead: "You may also be asked to document any of the following if they apply to your child:",
+    items: [
+      "Individualized Education Program (IEP)",
+      "Homelessness or housing insecurity",
+      "Foster care or kinship care",
+      "Language or developmental delays",
+    ],
   },
 ];
 
@@ -40,11 +59,16 @@ export default function BeforeYouApplyPage() {
             className="flex gap-4 rounded border border-[#e0e0e0] bg-white p-4"
           >
             <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#f3f6fa]">
-              <Icon name={doc.icon} size={20} alt="" />
+              <Icon name={doc.icon} size={24} alt="" />
             </div>
-            <div>
-              <p className="font-heavy text-base text-[#1d1d1d]">{doc.title}</p>
-              <p className="mt-1 text-base text-[#1d1d1d]">{doc.body}</p>
+            <div className="text-lg text-[#1d1d1d]">
+              <p className="font-heavy">{doc.title}</p>
+              <p className="mt-1">{doc.lead}</p>
+              <ul className="mt-1 list-disc pl-5">
+                {doc.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
