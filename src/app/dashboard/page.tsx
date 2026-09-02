@@ -25,7 +25,7 @@ const todos = [
 
 export default function DashboardTodoPage() {
   return (
-    <FamilyDashboardShell active="todo" pageIcon="icon-check-circle-success.svg">
+    <FamilyDashboardShell active="todo" pageIcon="checklist.svg">
       <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
         Welcome back, Karla!
       </h1>
@@ -45,7 +45,11 @@ export default function DashboardTodoPage() {
               className="inline-flex items-center gap-2 rounded border border-[#205c6f] px-4 py-2.5 text-sm text-[#205c6f]"
             >
               {item.cta}
-              <Icon name="icon-chevron-right.svg" size={16} />
+              <Icon
+                name="icon-chevron-right.svg"
+                size={16}
+                className="[filter:brightness(0)_saturate(100%)_invert(28%)_sepia(38%)_saturate(729%)_hue-rotate(147deg)_brightness(93%)_contrast(89%)]"
+              />
             </Link>
           </div>
         ))}

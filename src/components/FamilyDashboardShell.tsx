@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Icon } from "./ui";
 
 const navItems = [
-  { href: "/dashboard", label: "To do", icon: "icon-assignment.svg", key: "todo" },
+  { href: "/dashboard", label: "To do", icon: "checklist-dark.svg", key: "todo" },
   {
     href: "/dashboard/applications",
     label: "Applications",
@@ -117,18 +117,20 @@ export function FamilyDashboardShell({
             alt=""
             className="absolute inset-0 size-full object-cover"
           />
-          <div className="absolute right-5 top-4 flex items-center gap-6">
-            <div className="flex items-center gap-2 rounded p-2">
-              <Icon name="icon-language.svg" size={20} />
-              <span className="text-[15px] text-[#344054]">English</span>
-              <Icon name="icon-chevron-down.svg" size={20} />
+        </div>
+        {/* Aligns the row's bottom with the bottom of the 100px page icon
+            (banner 200px - icon overlap 48px + icon 100px = 252px). */}
+        <div className="absolute right-5 top-[252px] flex -translate-y-full items-center gap-6">
+          <div className="flex items-center gap-2 rounded p-2">
+            <Icon name="icon-language.svg" size={20} />
+            <span className="text-[15px] text-[#344054]">English</span>
+            <Icon name="icon-chevron-down.svg" size={20} />
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="flex size-9 items-center justify-center rounded-full bg-[#205c6f] text-sm font-heavy text-white">
+              KA
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex size-9 items-center justify-center rounded-full bg-[#205c6f] text-sm font-heavy text-white">
-                KA
-              </div>
-              <span className="text-sm text-[#1d1d1d]">Karla Abrams</span>
-            </div>
+            <span className="text-sm text-[#1d1d1d]">Karla Abrams</span>
           </div>
         </div>
         <div className="relative -mt-12 px-6 pb-16">
