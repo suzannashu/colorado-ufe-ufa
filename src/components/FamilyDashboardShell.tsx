@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Icon } from "./ui";
 
 const navItems = [
-  { href: "/dashboard", label: "To do", icon: "icon-assignment.svg", key: "todo" },
+  { href: "/dashboard", label: "To do", icon: "checklist-dark.svg", key: "todo" },
   {
     href: "/dashboard/applications",
     label: "Applications",
