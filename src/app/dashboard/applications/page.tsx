@@ -83,7 +83,7 @@ export default function DashboardApplicationsPage() {
 
       <div className="mt-8 max-w-[1152px] overflow-hidden border border-[#e0e0e0] bg-white">
         <table className="w-full text-left text-base text-[#1d1d1d]">
-          <thead className="border-b border-[#e0e0e0] bg-[#f3f6fa]">
+          <thead className="border-b border-[#e0e0e0] bg-white">
             <tr>
               <th className="px-4 py-3 font-heavy">Program / subsidy name</th>
               <th className="px-4 py-3 font-heavy">Applicant name</th>
