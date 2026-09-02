@@ -26,6 +26,21 @@ export default function ApplyProgramsPage() {
     },
   ];
 
+  const loremCriteria: Criterion[] = [
+    {
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      met: true,
+    },
+    {
+      text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      met: true,
+    },
+    {
+      text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      met: true,
+    },
+  ];
+
   const notEligibleUpkCriteria: Criterion[] = [
     { text: "Family lives in Colorado", met: true },
     { text: "The child must be 4 on October 1, 2026", met: false },
@@ -70,6 +85,7 @@ export default function ApplyProgramsPage() {
         role="Parent/Guardian"
         applyChecked={false}
         expanded={false}
+        criteria={loremCriteria}
       />
 
       <div className="flex flex-col gap-2 pt-2">
@@ -98,6 +114,7 @@ export default function ApplyProgramsPage() {
         role="Parent/Guardian"
         showApplyCheckbox={false}
         expanded={false}
+        criteria={loremCriteria}
       />
       <EligibilityCard
         title="HIPPY (Home Instruction for Parents of Preschool Youngsters)"
@@ -105,6 +122,7 @@ export default function ApplyProgramsPage() {
         role="Parent/Guardian"
         showApplyCheckbox={false}
         expanded={false}
+        criteria={loremCriteria}
       />
       <EligibilityCard
         title="Nurse-Family Partnership (NFP)"
@@ -112,6 +130,7 @@ export default function ApplyProgramsPage() {
         role="Parent/Guardian"
         showApplyCheckbox={false}
         expanded={false}
+        criteria={loremCriteria}
       />
     </ApplyProgramsShell>
   );
