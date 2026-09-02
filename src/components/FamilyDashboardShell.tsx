@@ -13,7 +13,7 @@ const navItems = [
   {
     href: "/dashboard/household",
     label: "Household",
-    icon: "icon-account-circle.svg",
+    icon: "people_alt.svg",
     key: "household",
   },
   {
@@ -32,7 +32,7 @@ const navItems = [
   {
     href: "/dashboard/programs",
     label: "Programs",
-    icon: "icon-programs.svg",
+    icon: "person_heart.svg",
     key: "programs",
   },
 ] as const;
