@@ -25,7 +25,7 @@ const todos = [
 
 export default function DashboardTodoPage() {
   return (
-    <FamilyDashboardShell active="todo" pageIcon="icon-check-circle-success.svg">
+    <FamilyDashboardShell active="todo" pageIcon="checklist.svg">
       <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
         Welcome back, Karla!
       </h1>
