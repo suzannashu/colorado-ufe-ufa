@@ -21,7 +21,7 @@ export default function ApplyPage() {
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
-            <Button href="/apply/register" variant="secondary">
+            <Button href="/dashboard/login" variant="secondary">
               Log in to my dashboard
             </Button>
           </div>
@@ -78,7 +78,7 @@ export default function ApplyPage() {
               Start my application
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
-            <Button href="/apply/register" variant="secondary">
+            <Button href="/dashboard/login" variant="secondary">
               Log in to my dashboard
             </Button>
           </div>

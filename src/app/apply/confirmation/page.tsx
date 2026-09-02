@@ -21,7 +21,7 @@ export default function ApplyConfirmationPage() {
             </p>
           </div>
           <hr className="w-full border-[#e0e0e0]" />
-          <Button href="/browse" className="my-10">
+          <Button href="/dashboard" className="my-10">
             Go to my dashboard
           </Button>
         </div>
