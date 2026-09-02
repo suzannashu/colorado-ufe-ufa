@@ -61,24 +61,24 @@ const rows: Row[] = [
 export default function DashboardApplicationsPage() {
   return (
     <FamilyDashboardShell active="applications" pageIcon="icon-assignment.svg">
-      <div className="flex max-w-[1152px] items-start justify-between gap-8">
-        <div className="max-w-[700px]">
-          <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
-            My applications
-          </h1>
-          <p className="mt-2 text-base text-[#1d1d1d]">
-            To review your application, click on the Program/subsidy name link. If
-            you&apos;re not sure which program to apply for, please check the{" "}
-            <Link href="/browse" className="text-[#205c6f] underline">
-              Programs
-            </Link>{" "}
-            page to learn more.
-          </p>
+      <div className="max-w-[1152px]">
+        <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
+          My applications
+        </h1>
+        <p className="mt-2 text-base text-[#1d1d1d]">
+          To review your application, click on the Program/subsidy name link. If
+          you&apos;re not sure which program to apply for, please check the{" "}
+          <Link href="/browse" className="text-[#205c6f] underline">
+            Programs
+          </Link>{" "}
+          page to learn more.
+        </p>
+        <div className="mt-4 flex justify-end">
+          <Button href="/dashboard/applications/new" size="sm" className="shrink-0">
+            <Icon name="icon-add.svg" size={16} className="brightness-0 invert" />
+            New application
+          </Button>
         </div>
-        <Button href="/dashboard/applications/new" size="sm" className="shrink-0">
-          <Icon name="icon-add.svg" size={16} className="brightness-0 invert" />
-          New application
-        </Button>
       </div>
 
       <div className="mt-8 max-w-[1152px] overflow-hidden border border-[#e0e0e0] bg-white">
