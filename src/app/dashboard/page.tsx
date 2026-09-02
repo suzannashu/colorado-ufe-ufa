@@ -13,13 +13,13 @@ const todos = [
     icon: "icon-folder-open.svg",
     title: "You have new documents to review",
     cta: "My documents",
-    href: "/dashboard",
+    href: "/dashboard/documents",
   },
   {
     icon: "icon-question-answer.svg",
     title: "You have 2 unread messages",
     cta: "Messages",
-    href: "/dashboard",
+    href: "/dashboard/messages",
   },
 ];
 

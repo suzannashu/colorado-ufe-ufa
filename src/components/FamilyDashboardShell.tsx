@@ -10,16 +10,31 @@ const navItems = [
     icon: "icon-feed.svg",
     key: "applications",
   },
-  { href: "/dashboard", label: "Household", icon: "icon-account-circle.svg", key: "household" },
-  { href: "/dashboard", label: "Documents", icon: "icon-folder-open.svg", key: "documents" },
   {
-    href: "/dashboard",
+    href: "/dashboard/household",
+    label: "Household",
+    icon: "icon-account-circle.svg",
+    key: "household",
+  },
+  {
+    href: "/dashboard/documents",
+    label: "Documents",
+    icon: "icon-folder-open.svg",
+    key: "documents",
+  },
+  {
+    href: "/dashboard/messages",
     label: "Messages",
     icon: "icon-question-answer.svg",
     key: "messages",
     badge: 2,
   },
-  { href: "/browse", label: "Programs", icon: "icon-programs.svg", key: "programs" },
+  {
+    href: "/dashboard/programs",
+    label: "Programs",
+    icon: "icon-programs.svg",
+    key: "programs",
+  },
 ] as const;
 
 export function FamilyDashboardShell({
