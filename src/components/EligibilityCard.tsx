@@ -80,6 +80,11 @@ export function EligibilityCard({
                 <Icon
                   name={c.met ? "icon-check-green.svg" : "icon-cancel.svg"}
                   size={24}
+                  className={
+                    c.met
+                      ? ""
+                      : "[filter:brightness(0)_saturate(100%)_invert(28%)_sepia(72%)_saturate(3000%)_hue-rotate(348deg)_brightness(88%)_contrast(90%)]"
+                  }
                 />
                 <p className="text-base text-[#1d1d1d]">{c.text}</p>
               </div>
