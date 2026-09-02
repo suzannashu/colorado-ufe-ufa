@@ -83,14 +83,14 @@ export default function ApplyRegisterPage() {
           <div className="flex flex-col items-center gap-4">
             <Button
               href="/apply/before-you-apply"
-              className="w-[332px] justify-center"
+              className="w-[420px] justify-center whitespace-nowrap"
             >
               Create my account
             </Button>
             <Button
               href="/apply/before-you-apply"
               variant="secondary"
-              className="w-[332px] justify-center"
+              className="w-[420px] justify-center whitespace-nowrap"
             >
               Log in if you already have an account
             </Button>
