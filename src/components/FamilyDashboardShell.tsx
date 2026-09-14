@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Icon } from "./ui";
+import { UserMenu } from "./UserMenu";
 
 const navItems = [
   { href: "/dashboard", label: "To do", icon: "checklist-dark.svg", key: "todo" },
@@ -132,12 +133,7 @@ export function FamilyDashboardShell({
             <span className="text-[15px] text-[#344054]">English</span>
             <Icon name="icon-chevron-down.svg" size={20} />
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex size-9 items-center justify-center rounded-full bg-[#205c6f] text-sm font-heavy text-white">
-              KA
-            </div>
-            <span className="text-sm text-[#1d1d1d]">Karla Abrams</span>
-          </div>
+          <UserMenu name="Karla Abrams" />
         </div>
         <div className="relative -mt-12 px-6 pb-16">
           <div className="mb-6 flex size-[100px] items-center justify-center rounded-full bg-[#205c6f] shadow-sm">
