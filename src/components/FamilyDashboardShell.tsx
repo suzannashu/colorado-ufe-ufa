@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Icon } from "./ui";
+import { UserMenu } from "./UserMenu";
 
 const navItems = [
   { href: "/dashboard", label: "To do", icon: "checklist-dark.svg", key: "todo" },
@@ -41,11 +42,15 @@ export function FamilyDashboardShell({
   children,
   active = "todo",
   pageIcon = "icon-assignment.svg",
+  hideMessagesBadge = false,
 }: {
   children: ReactNode;
   active?: (typeof navItems)[number]["key"];
   pageIcon?: string;
+  hideMessagesBadge?: boolean;
 }) {
+  // The Programs link is hidden across all dashboard pages.
+  const visibleNavItems = navItems.filter((item) => item.key !== "programs");
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">
@@ -61,7 +66,7 @@ export function FamilyDashboardShell({
         </div>
         <nav className="mt-4 flex flex-1 flex-col justify-between">
           <div className="flex flex-col gap-8 px-4">
-            {navItems.map((item) => {
+            {visibleNavItems.map((item) => {
               const isActive = item.key === active;
               return (
                 <Link
@@ -75,7 +80,9 @@ export function FamilyDashboardShell({
                     <Icon name={item.icon} size={24} />
                     {item.label}
                   </span>
-                  {"badge" in item && item.badge ? (
+                  {"badge" in item &&
+                  item.badge &&
+                  !(item.key === "messages" && hideMessagesBadge) ? (
                     <span className="rounded-full bg-[#f57c00] px-1 py-0.5 text-center text-sm font-heavy text-white">
                       {item.badge}
                     </span>
@@ -126,12 +133,7 @@ export function FamilyDashboardShell({
             <span className="text-[15px] text-[#344054]">English</span>
             <Icon name="icon-chevron-down.svg" size={20} />
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex size-9 items-center justify-center rounded-full bg-[#205c6f] text-sm font-heavy text-white">
-              KA
-            </div>
-            <span className="text-sm text-[#1d1d1d]">Karla Abrams</span>
-          </div>
+          <UserMenu name="Karla Abrams" />
         </div>
         <div className="relative -mt-12 px-6 pb-16">
           <div className="mb-6 flex size-[100px] items-center justify-center rounded-full bg-[#205c6f] shadow-sm">
