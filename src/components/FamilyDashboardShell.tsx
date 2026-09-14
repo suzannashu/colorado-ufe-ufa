@@ -42,17 +42,14 @@ export function FamilyDashboardShell({
   active = "todo",
   pageIcon = "icon-assignment.svg",
   hideMessagesBadge = false,
-  hideProgramsLink = false,
 }: {
   children: ReactNode;
   active?: (typeof navItems)[number]["key"];
   pageIcon?: string;
   hideMessagesBadge?: boolean;
-  hideProgramsLink?: boolean;
 }) {
-  const visibleNavItems = hideProgramsLink
-    ? navItems.filter((item) => item.key !== "programs")
-    : navItems;
+  // The Programs link is hidden across all dashboard pages.
+  const visibleNavItems = navItems.filter((item) => item.key !== "programs");
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">

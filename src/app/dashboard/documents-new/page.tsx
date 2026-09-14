@@ -46,7 +46,6 @@ export default function DashboardDocumentsNewPage() {
       active="documents"
       pageIcon="icon-folder-open.svg"
       hideMessagesBadge
-      hideProgramsLink
     >
       <div className="flex max-w-[1152px] flex-col gap-8">
         <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">

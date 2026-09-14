@@ -42,7 +42,6 @@ export default function DashboardApplicationsNewPage() {
     <FamilyDashboardShell
       active="applications"
       pageIcon="icon-assignment.svg"
-      hideProgramsLink
     >
       <div className="max-w-[1152px]">
         <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
