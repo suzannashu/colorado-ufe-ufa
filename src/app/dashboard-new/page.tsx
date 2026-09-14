@@ -7,7 +7,7 @@ const todos = [
     icon: "icon-assignment.svg",
     title: "You have 1 application in progress",
     cta: "My applications",
-    href: "/dashboard/applications",
+    href: "/dashboard/applications-new",
   },
   {
     icon: "icon-folder-open.svg",

@@ -42,12 +42,17 @@ export function FamilyDashboardShell({
   active = "todo",
   pageIcon = "icon-assignment.svg",
   hideMessagesBadge = false,
+  hideProgramsLink = false,
 }: {
   children: ReactNode;
   active?: (typeof navItems)[number]["key"];
   pageIcon?: string;
   hideMessagesBadge?: boolean;
+  hideProgramsLink?: boolean;
 }) {
+  const visibleNavItems = hideProgramsLink
+    ? navItems.filter((item) => item.key !== "programs")
+    : navItems;
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">
@@ -63,7 +68,7 @@ export function FamilyDashboardShell({
         </div>
         <nav className="mt-4 flex flex-1 flex-col justify-between">
           <div className="flex flex-col gap-8 px-4">
-            {navItems.map((item) => {
+            {visibleNavItems.map((item) => {
               const isActive = item.key === active;
               return (
                 <Link
