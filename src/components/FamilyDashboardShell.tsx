@@ -41,10 +41,12 @@ export function FamilyDashboardShell({
   children,
   active = "todo",
   pageIcon = "icon-assignment.svg",
+  hideMessagesBadge = false,
 }: {
   children: ReactNode;
   active?: (typeof navItems)[number]["key"];
   pageIcon?: string;
+  hideMessagesBadge?: boolean;
 }) {
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
@@ -75,7 +77,9 @@ export function FamilyDashboardShell({
                     <Icon name={item.icon} size={24} />
                     {item.label}
                   </span>
-                  {"badge" in item && item.badge ? (
+                  {"badge" in item &&
+                  item.badge &&
+                  !(item.key === "messages" && hideMessagesBadge) ? (
                     <span className="rounded-full bg-[#f57c00] px-1 py-0.5 text-center text-sm font-heavy text-white">
                       {item.badge}
                     </span>

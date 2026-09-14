@@ -15,19 +15,13 @@ const todos = [
     cta: "My documents",
     href: "/dashboard/documents",
   },
-  {
-    icon: "icon-question-answer.svg",
-    title: "You have 2 unread messages",
-    cta: "Messages",
-    href: "/dashboard/messages",
-  },
 ];
 
 export default function DashboardNewPage() {
   return (
-    <FamilyDashboardShell active="todo" pageIcon="checklist.svg">
+    <FamilyDashboardShell active="todo" pageIcon="checklist.svg" hideMessagesBadge>
       <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
-        Welcome back, Karla!
+        Welcome, Karla!
       </h1>
       <h2 className="mt-8 font-heavy text-xl text-[#1d1d1d]">To do</h2>
       <div className="mt-6 flex max-w-[1152px] flex-col gap-6">
