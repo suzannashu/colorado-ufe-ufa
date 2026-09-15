@@ -6,6 +6,7 @@ const programs = [
   {
     title: "Colorado Universal Preschool Program (UPK)",
     href: "/programs/upk",
+    hideLink: true,
     body: (
       <>
         Colorado&apos;s Universal Preschool Program (UPK) offers up to 15 hours
@@ -113,10 +114,12 @@ export default function BrowsePage() {
                   {program.body}
                 </p>
               </div>
-              <Button href={program.href} size="sm" className="shrink-0 self-start">
-                Learn more
-                <Icon name="icon-chevron-right.svg" size={16} />
-              </Button>
+              {"hideLink" in program && program.hideLink ? null : (
+                <Button href={program.href} size="sm" className="shrink-0 self-start">
+                  Learn more
+                  <Icon name="icon-chevron-right.svg" size={16} />
+                </Button>
+              )}
             </article>
           ))}
 

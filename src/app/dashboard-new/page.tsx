@@ -13,13 +13,18 @@ const todos = [
     icon: "icon-folder-open.svg",
     title: "You have new documents to review",
     cta: "My documents",
-    href: "/dashboard/documents",
+    href: "/dashboard/documents-new",
   },
 ];
 
 export default function DashboardNewPage() {
   return (
-    <FamilyDashboardShell active="todo" pageIcon="checklist.svg" hideMessagesBadge>
+    <FamilyDashboardShell
+      active="todo"
+      pageIcon="checklist.svg"
+      hideMessagesBadge
+      newVariant
+    >
       <h1 className="font-heavy text-[28px] leading-10 text-[#1d1d1d]">
         Welcome, Karla!
       </h1>
