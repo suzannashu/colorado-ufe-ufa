@@ -38,24 +38,36 @@ const navItems = [
   },
 ] as const;
 
+// In the "new" flow, nav links point to the duplicated -new pages.
+const newHrefByKey: Record<string, string> = {
+  todo: "/dashboard-new",
+  applications: "/dashboard/applications-new",
+  household: "/dashboard/household-new",
+  documents: "/dashboard/documents-new",
+  messages: "/dashboard/messages-new",
+};
+
 export function FamilyDashboardShell({
   children,
   active = "todo",
   pageIcon = "icon-assignment.svg",
   hideMessagesBadge = false,
+  newVariant = false,
 }: {
   children: ReactNode;
   active?: (typeof navItems)[number]["key"];
   pageIcon?: string;
   hideMessagesBadge?: boolean;
+  newVariant?: boolean;
 }) {
   // The Programs link is hidden across all dashboard pages.
   const visibleNavItems = navItems.filter((item) => item.key !== "programs");
+  const homeHref = newVariant ? "/dashboard-new" : "/dashboard";
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">
         <div className="p-2">
-          <Link href="/dashboard" className="block px-1 py-2">
+          <Link href={homeHref} className="block px-1 py-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/bc-logo.svg"
@@ -68,10 +80,13 @@ export function FamilyDashboardShell({
           <div className="flex flex-col gap-8 px-4">
             {visibleNavItems.map((item) => {
               const isActive = item.key === active;
+              const href = newVariant
+                ? newHrefByKey[item.key] ?? item.href
+                : item.href;
               return (
                 <Link
                   key={item.key}
-                  href={item.href}
+                  href={href}
                   className={`flex items-center justify-between gap-4 text-base text-[#1d1d1d] ${
                     isActive ? "font-heavy" : ""
                   }`}
