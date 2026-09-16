@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Icon } from "./ui";
-import { logOut } from "@/lib/dashboardAuth";
 
 export function UserMenu({ name = "Karla Abrams" }: { name?: string }) {
   const router = useRouter();
@@ -29,7 +28,6 @@ export function UserMenu({ name = "Karla Abrams" }: { name?: string }) {
 
   function handleLogout() {
     setOpen(false);
-    logOut();
     router.push("/dashboard/login");
   }
 
