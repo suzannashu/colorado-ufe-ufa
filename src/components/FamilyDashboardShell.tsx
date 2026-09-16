@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { Icon } from "./ui";
 import { UserMenu } from "./UserMenu";
+import { DashboardAuthGuard } from "./DashboardAuthGuard";
 
 const navItems = [
   { href: "/dashboard", label: "To do", icon: "checklist-dark.svg", key: "todo" },
@@ -64,6 +65,7 @@ export function FamilyDashboardShell({
   const visibleNavItems = navItems.filter((item) => item.key !== "programs");
   const homeHref = newVariant ? "/dashboard-new" : "/dashboard";
   return (
+    <DashboardAuthGuard>
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">
         <div className="p-2">
@@ -158,5 +160,6 @@ export function FamilyDashboardShell({
         </div>
       </main>
     </div>
+    </DashboardAuthGuard>
   );
 }
