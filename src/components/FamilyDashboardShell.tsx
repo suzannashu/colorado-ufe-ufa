@@ -142,7 +142,7 @@ export function FamilyDashboardShell({
         </div>
         {/* Aligns the row's bottom with the bottom of the 100px page icon
             (banner 200px - icon overlap 48px + icon 100px = 252px). */}
-        <div className="absolute right-5 top-[252px] flex -translate-y-full items-center gap-6">
+        <div className="absolute right-5 top-[252px] z-20 flex -translate-y-full items-center gap-6">
           <div className="flex items-center gap-2 rounded p-2">
             <Icon name="icon-language.svg" size={20} />
             <span className="text-[15px] text-[#344054]">English</span>
