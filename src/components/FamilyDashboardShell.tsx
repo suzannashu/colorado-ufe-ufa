@@ -62,12 +62,11 @@ export function FamilyDashboardShell({
 }) {
   // The Programs link is hidden across all dashboard pages.
   const visibleNavItems = navItems.filter((item) => item.key !== "programs");
-  const homeHref = newVariant ? "/dashboard-new" : "/dashboard";
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">
         <div className="p-2">
-          <Link href={homeHref} className="block px-1 py-2">
+          <Link href="/" className="block px-1 py-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/bc-logo.svg"
@@ -98,7 +97,7 @@ export function FamilyDashboardShell({
                   {"badge" in item &&
                   item.badge &&
                   !(item.key === "messages" && hideMessagesBadge) ? (
-                    <span className="rounded-full bg-[#f57c00] px-1 py-0.5 text-center text-sm font-heavy text-white">
+                    <span className="flex size-5 items-center justify-center rounded-full bg-[#f57c00] text-center text-xs font-heavy text-white">
                       {item.badge}
                     </span>
                   ) : null}
