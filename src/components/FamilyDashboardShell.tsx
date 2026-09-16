@@ -62,12 +62,11 @@ export function FamilyDashboardShell({
 }) {
   // The Programs link is hidden across all dashboard pages.
   const visibleNavItems = navItems.filter((item) => item.key !== "programs");
-  const homeHref = newVariant ? "/dashboard-new" : "/dashboard";
   return (
     <div className="flex min-h-screen bg-[#f3f6fa]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-[#e0e0e0] bg-white">
         <div className="p-2">
-          <Link href={homeHref} className="block px-1 py-2">
+          <Link href="/" className="block px-1 py-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/bc-logo.svg"
@@ -98,7 +97,7 @@ export function FamilyDashboardShell({
                   {"badge" in item &&
                   item.badge &&
                   !(item.key === "messages" && hideMessagesBadge) ? (
-                    <span className="rounded-full bg-[#f57c00] px-1 py-0.5 text-center text-sm font-heavy text-white">
+                    <span className="flex size-5 items-center justify-center rounded-full bg-[#f57c00] text-center text-xs font-heavy text-white">
                       {item.badge}
                     </span>
                   ) : null}
@@ -142,7 +141,7 @@ export function FamilyDashboardShell({
         </div>
         {/* Aligns the row's bottom with the bottom of the 100px page icon
             (banner 200px - icon overlap 48px + icon 100px = 252px). */}
-        <div className="absolute right-5 top-[252px] flex -translate-y-full items-center gap-6">
+        <div className="absolute right-5 top-[252px] z-20 flex -translate-y-full items-center gap-6">
           <div className="flex items-center gap-2 rounded p-2">
             <Icon name="icon-language.svg" size={20} />
             <span className="text-[15px] text-[#344054]">English</span>

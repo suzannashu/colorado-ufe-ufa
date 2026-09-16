@@ -28,7 +28,7 @@ export function UserMenu({ name = "Karla Abrams" }: { name?: string }) {
 
   function handleLogout() {
     setOpen(false);
-    router.push("/apply");
+    router.push("/dashboard/login");
   }
 
   return (
