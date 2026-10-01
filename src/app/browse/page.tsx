@@ -1,68 +1,195 @@
 import { BrowseFilters } from "@/components/BrowseFilters";
 import { FullBleed, PageShell } from "@/components/SiteChrome";
-import { Button, Icon, ImgPlaceholder } from "@/components/ui";
+import { Button, Chip, Icon, ImgPlaceholder } from "@/components/ui";
 
-const programs = [
+type Program = {
+  title: string;
+  body: string;
+  href: string;
+  also: string[];
+};
+
+type Category = {
+  id: string;
+  name: string;
+  programs: Program[];
+};
+
+const categories: Category[] = [
   {
-    title: "Colorado Universal Preschool Program (UPK)",
-    href: "/programs/upk",
-    hideLink: true,
-    body: (
-      <>
-        Colorado&apos;s Universal Preschool Program (UPK) offers up to 15 hours
-        per week of free,{" "}
-        <span className="text-[#205c6f]">
-          high-quality preschool for children
-        </span>{" "}
-        in their year before kindergarten. UPK emphasizes family choice through
-        a “mixed-delivery” model, allowing families to select the best preschool
-        setting from various program types to suit their child&apos;s needs.
-      </>
-    ),
+    id: "early-learning",
+    name: "Early learning",
+    programs: [
+      {
+        title: "Colorado Universal Preschool Program (UPK)",
+        body: "Provides free preschool for eligible Colorado children before kindergarten, with additional eligibility options for some younger children.",
+        href: "/programs/upk",
+        also: ["Child care"],
+      },
+      {
+        title: "Early Head Start",
+        body: "Supports pregnant women, infants and toddlers with early learning, health and family services.",
+        href: "/browse",
+        also: ["Mental health support"],
+      },
+      {
+        title: "Early Intervention Colorado – IDEA Part C (Intake, Evaluation, Services)",
+        body: "Provides evaluations and early support for infants and toddlers with developmental delays.",
+        href: "/browse",
+        also: ["Home visitation"],
+      },
+      {
+        title: "Head Start Preschool",
+        body: "Offers early education, health, nutrition, and family support to eligible children ages 3 - 5.",
+        href: "/browse",
+        also: ["Financial support"],
+      },
+      {
+        title: "Imagination Library",
+        body: "Delivers free books to children to encourage early reading and a love of learning.",
+        href: "/browse",
+        also: [],
+      },
+      {
+        title: "Incredible Years",
+        body: "Helps parents build positive relationships and support children's behavior and social-emotional skills.",
+        href: "/browse",
+        also: ["Mental health support"],
+      },
+    ],
   },
   {
-    title: "Supplemental Nutrition Assistance Program (SNAP)",
-    href: "/browse",
-    body: (
-      <>
-        <span className="text-[#205c6f]">
-          The Supplemental Nutrition Assistance Program (SNAP)
-        </span>{" "}
-        is a federally funded program that provided food benefits to low-income
-        families to supplement their grocery budget so they can afford the
-        nutritious food essential to health and well-being. Eligible households
-        receive monthly benefits via an Electronic Benefits Transaction (EBT)
-        card, redeemable for food items only. To be eligible for SNAP, the
-        applicant must be a U.S. Citizen or lawful permanent resident.{" "}
-        <span className="font-heavy text-[#205c6f]">Show less</span>
-      </>
-    ),
+    id: "child-care",
+    name: "Child care",
+    programs: [
+      {
+        title: "Child Care Locator",
+        body: "Helps families find and compare child care options that meet their needs.",
+        href: "/browse",
+        also: ["Early learning"],
+      },
+      {
+        title: "Colorado Child Care Assistance Program (CCCAP)",
+        body: "Helps eligible families pay for child care while they work, study or attend approved training.",
+        href: "/browse",
+        also: ["Financial support"],
+      },
+    ],
   },
   {
-    title: "Early Childhood Mental Health Support Line",
-    href: "/browse",
-    body: (
-      <>
-        The Early Childhood Mental Health (ECMH) Support Line offers{" "}
-        <span className="text-[#205c6f]">free, confidential help</span> for
-        parents and caregivers of children under 6. By calling this phone line,
-        families can connect with infant mental health resources, get advice on
-        managing parenting stress, changes in child behavior, and locate
-        resources in their community. If your child is having a hard time in
-        child care or ...{" "}
-        <span className="font-heavy text-[#205c6f]">Show more</span>
-      </>
-    ),
+    id: "home-visitation",
+    name: "Home visitation",
+    programs: [
+      {
+        title: "Child First",
+        body: "Provides home-based support for young children and families to build healthy relationships and support development.",
+        href: "/browse",
+        also: ["Mental health support"],
+      },
+      {
+        title: "Family Connects",
+        body: "Provides nurse home visits, newborn care guidance and connections to community resources.",
+        href: "/browse",
+        also: ["Parenting support & education"],
+      },
+      {
+        title: "Home Instruction for Parents of Preschool Youngsters (HIPPY)",
+        body: "Helps parents support their child's early learning through home-based activities and education.",
+        href: "/browse",
+        also: ["Parenting support & education"],
+      },
+      {
+        title: "Nurse-Family Partnership (NFP)",
+        body: "Provides nurse home visits to first-time parents during pregnancy and their child's early years.",
+        href: "/browse",
+        also: ["Early learning"],
+      },
+      {
+        title: "Parents as Teachers (PAT)",
+        body: "Offers home visits, parenting guidance and resources to support children's health, learning and development.",
+        href: "/browse",
+        also: ["Early learning"],
+      },
+      {
+        title: "SafeCare Colorado (SCC)",
+        body: "Helps families build parenting skills, support child health and create safer homes.",
+        href: "/browse",
+        also: ["Parenting support & education"],
+      },
+    ],
   },
   {
-    title: "Head Start Preschool",
-    href: "/browse",
-    body: "Head Start helps children ages 3 to 5 from low-income families be successful learners. The program supports their learning and growth by providing education, health, nutrition, and family services. Migrant and Seasonal Head Start provides education and support services to low-income children of migrant and seasonal workers and their families.",
+    id: "parenting-support",
+    name: "Parenting support & education",
+    programs: [
+      {
+        title: "Circle of Parents / Circle of Fathers",
+        body: "Connects parents and caregivers through peer support and parenting groups.",
+        href: "/browse",
+        also: [],
+      },
+      {
+        title: "Colorado Fatherhood Program",
+        body: "Helps fathers strengthen parenting skills and build positive relationships with their children.",
+        href: "/browse",
+        also: ["Financial support"],
+      },
+      {
+        title: "Colorado Works – TANF",
+        body: "Offers financial assistance and employment support to eligible families with children.",
+        href: "/browse",
+        also: ["Financial support"],
+      },
+      {
+        title: "Nurturing Parents/Nurturing Fathers",
+        body: "Helps parents and fathers build positive parenting skills and strengthen family relationships.",
+        href: "/browse",
+        also: [],
+      },
+    ],
   },
   {
-    title: "Circle of Parents / Circle of Fathers",
-    href: "/browse",
-    body: "Circle of Parents offers free peer support groups for parents and caregivers. These groups provide a safe space to share experiences, celebrate successes, and find helpful resources. Meetings help to build connection, confidence, and knowledge about parenting.",
+    id: "food-and-nutrition",
+    name: "Food and nutrition",
+    programs: [
+      {
+        title:
+          "Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)",
+        body: "Provides healthy foods, nutrition education and breastfeeding support for eligible women, infants and children.",
+        href: "/browse",
+        also: ["Family resource navigation"],
+      },
+      {
+        title: "Supplemental Nutrition Assistance Program (SNAP)",
+        body: "Provides monthly food benefits to eligible low-income individuals and families to help them buy groceries and meet nutritional needs.",
+        href: "/browse",
+        also: ["Financial support"],
+      },
+    ],
+  },
+  {
+    id: "mental-health",
+    name: "Mental health support",
+    programs: [
+      {
+        title: "Early Childhood Mental Health Support Line",
+        body: "Offers guidance to families and early childhood professionals on young children's social, emotional and behavioral needs.",
+        href: "/browse",
+        also: ["Family resource navigation"],
+      },
+    ],
+  },
+  {
+    id: "family-resource-navigation",
+    name: "Family resource navigation",
+    programs: [
+      {
+        title: "Family Resource Centers",
+        body: "Connect families with local resources, services and support, including help with basic needs, parenting and family well-being.",
+        href: "/browse",
+        also: ["Parenting support & education"],
+      },
+    ],
   },
 ];
 
@@ -90,42 +217,70 @@ export default function BrowsePage() {
       </FullBleed>
 
       <section className="flex flex-col items-center py-[60px]">
-        <div className="flex w-[942px] flex-col gap-6">
+        <div className="flex w-full max-w-[1160px] flex-col gap-8 px-6">
           <BrowseFilters />
 
-          {programs.map((program) => (
-            <article
-              key={program.title}
-              className="flex gap-6 rounded-2xl border border-[#e0e0e0] bg-white p-6"
-            >
-              <div className="flex min-w-0 flex-1 flex-col gap-3">
-                <h2 className="font-heavy text-lg leading-6 text-[#1d1d1d]">
-                  {program.title}
-                </h2>
-                <div className="flex gap-2">
-                  <span className="rounded-full bg-[rgba(36,41,83,0.12)] px-2 py-0.5 text-xs text-[#205c6f]">
-                    Category name
-                  </span>
-                  <span className="rounded-full bg-[rgba(36,41,83,0.12)] px-2 py-0.5 text-xs text-[#205c6f]">
-                    Category name
-                  </span>
+          <div className="flex flex-col gap-12">
+            {categories.map((category) => (
+              <section
+                key={category.id}
+                id={category.id}
+                aria-labelledby={`${category.id}-heading`}
+                className="scroll-mt-24 overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white"
+              >
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 bg-[rgba(32,92,111,0.12)] px-6 py-4">
+                  <h2
+                    id={`${category.id}-heading`}
+                    className="font-heavy text-2xl text-[#1d1d1d]"
+                  >
+                    {category.name}
+                  </h2>
+                  <p className="shrink-0 text-sm text-[#205c6f]">
+                    {category.programs.length}{" "}
+                    {category.programs.length === 1 ? "program" : "programs"}
+                  </p>
                 </div>
-                <p className="text-base leading-6 text-[#1d1d1d]">
-                  {program.body}
-                </p>
-              </div>
-              {"hideLink" in program && program.hideLink ? null : (
-                <Button href={program.href} size="sm" className="shrink-0 self-start">
-                  Learn more
-                  <Icon name="icon-chevron-right.svg" size={16} />
-                </Button>
-              )}
-            </article>
-          ))}
 
-          <p className="text-sm text-[#757575]">
-            Note: Not all 24 programs are shown in this prototype.
-          </p>
+                <ul>
+                  {category.programs.map((program) => (
+                    <li
+                      key={program.title}
+                      className="border-t border-[#e0e0e0] px-6 py-5"
+                    >
+                      <article className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-6">
+                        <div className="flex min-w-0 flex-1 flex-col gap-2">
+                          <h3 className="font-heavy text-lg leading-6 text-[#1d1d1d]">
+                            {program.title}
+                          </h3>
+                          {program.also.length > 0 ? (
+                            <div className="flex flex-wrap items-center gap-2">
+                              <span className="text-xs text-[#757575]">
+                                Also
+                              </span>
+                              {program.also.map((label) => (
+                                <Chip key={label}>{label}</Chip>
+                              ))}
+                            </div>
+                          ) : null}
+                          <p className="text-base leading-6 text-[#1d1d1d]">
+                            {program.body}
+                          </p>
+                        </div>
+                        <Button
+                          href={program.href}
+                          size="sm"
+                          className="shrink-0"
+                        >
+                          Learn more
+                          <Icon name="icon-chevron-right.svg" size={16} />
+                        </Button>
+                      </article>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
     </PageShell>
