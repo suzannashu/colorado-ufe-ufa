@@ -17,10 +17,12 @@ const MENUS: Record<string, string[]> = {
   support: [
     "Child care",
     "Early learning",
+    "Family resource navigation",
+    "Financial support",
     "Food & nutrition",
-    "Health coverage",
     "Home visits",
     "Mental health support",
+    "Parenting support",
   ],
 };
 

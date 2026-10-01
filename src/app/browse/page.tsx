@@ -36,7 +36,7 @@ const categories: Category[] = [
         title: "Early Intervention Colorado – IDEA Part C (Intake, Evaluation, Services)",
         body: "Provides evaluations and early support for infants and toddlers with developmental delays.",
         href: "/browse",
-        also: ["Home visitation"],
+        also: ["Home visits"],
       },
       {
         title: "Head Start Preschool",
@@ -78,7 +78,7 @@ const categories: Category[] = [
   },
   {
     id: "home-visitation",
-    name: "Home visitation",
+    name: "Home visits",
     programs: [
       {
         title: "Child First",
@@ -90,13 +90,13 @@ const categories: Category[] = [
         title: "Family Connects",
         body: "Provides nurse home visits, newborn care guidance and connections to community resources.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
       {
         title: "Home Instruction for Parents of Preschool Youngsters (HIPPY)",
         body: "Helps parents support their child's early learning through home-based activities and education.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
       {
         title: "Nurse-Family Partnership (NFP)",
@@ -114,13 +114,13 @@ const categories: Category[] = [
         title: "SafeCare Colorado (SCC)",
         body: "Helps families build parenting skills, support child health and create safer homes.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
     ],
   },
   {
     id: "parenting-support",
-    name: "Parenting support & education",
+    name: "Parenting support",
     programs: [
       {
         title: "Circle of Parents / Circle of Fathers",
@@ -187,7 +187,7 @@ const categories: Category[] = [
         title: "Family Resource Centers",
         body: "Connect families with local resources, services and support, including help with basic needs, parenting and family well-being.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
     ],
   },
