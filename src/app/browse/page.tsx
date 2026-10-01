@@ -1,19 +1,6 @@
-import { BrowseFilters } from "@/components/BrowseFilters";
+import { ProgramDirectory, type Category } from "@/components/ProgramDirectory";
 import { FullBleed, PageShell } from "@/components/SiteChrome";
-import { Button, Chip, Icon, ImgPlaceholder } from "@/components/ui";
-
-type Program = {
-  title: string;
-  body: string;
-  href: string;
-  also: string[];
-};
-
-type Category = {
-  id: string;
-  name: string;
-  programs: Program[];
-};
+import { Button, Icon, ImgPlaceholder } from "@/components/ui";
 
 const categories: Category[] = [
   {
@@ -36,7 +23,7 @@ const categories: Category[] = [
         title: "Early Intervention Colorado – IDEA Part C (Intake, Evaluation, Services)",
         body: "Provides evaluations and early support for infants and toddlers with developmental delays.",
         href: "/browse",
-        also: ["Home visitation"],
+        also: ["Home visits"],
       },
       {
         title: "Head Start Preschool",
@@ -78,7 +65,7 @@ const categories: Category[] = [
   },
   {
     id: "home-visitation",
-    name: "Home visitation",
+    name: "Home visits",
     programs: [
       {
         title: "Child First",
@@ -90,13 +77,13 @@ const categories: Category[] = [
         title: "Family Connects",
         body: "Provides nurse home visits, newborn care guidance and connections to community resources.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
       {
         title: "Home Instruction for Parents of Preschool Youngsters (HIPPY)",
         body: "Helps parents support their child's early learning through home-based activities and education.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
       {
         title: "Nurse-Family Partnership (NFP)",
@@ -114,13 +101,13 @@ const categories: Category[] = [
         title: "SafeCare Colorado (SCC)",
         body: "Helps families build parenting skills, support child health and create safer homes.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
     ],
   },
   {
     id: "parenting-support",
-    name: "Parenting support & education",
+    name: "Parenting support",
     programs: [
       {
         title: "Circle of Parents / Circle of Fathers",
@@ -187,7 +174,7 @@ const categories: Category[] = [
         title: "Family Resource Centers",
         body: "Connect families with local resources, services and support, including help with basic needs, parenting and family well-being.",
         href: "/browse",
-        also: ["Parenting support & education"],
+        also: ["Parenting support"],
       },
     ],
   },
@@ -218,69 +205,7 @@ export default function BrowsePage() {
 
       <section className="flex flex-col items-center py-[60px]">
         <div className="flex w-full max-w-[1160px] flex-col gap-8 px-6">
-          <BrowseFilters />
-
-          <div className="flex flex-col gap-12">
-            {categories.map((category) => (
-              <section
-                key={category.id}
-                id={category.id}
-                aria-labelledby={`${category.id}-heading`}
-                className="scroll-mt-24 overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white"
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 bg-[rgba(32,92,111,0.12)] px-6 py-4">
-                  <h2
-                    id={`${category.id}-heading`}
-                    className="font-heavy text-2xl text-[#1d1d1d]"
-                  >
-                    {category.name}
-                  </h2>
-                  <p className="shrink-0 text-sm text-[#205c6f]">
-                    {category.programs.length}{" "}
-                    {category.programs.length === 1 ? "program" : "programs"}
-                  </p>
-                </div>
-
-                <ul>
-                  {category.programs.map((program) => (
-                    <li
-                      key={program.title}
-                      className="border-t border-[#e0e0e0] px-6 py-5"
-                    >
-                      <article className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-6">
-                        <div className="flex min-w-0 flex-1 flex-col gap-2">
-                          <h3 className="font-heavy text-lg leading-6 text-[#1d1d1d]">
-                            {program.title}
-                          </h3>
-                          {program.also.length > 0 ? (
-                            <div className="flex flex-wrap items-center gap-2">
-                              <span className="text-xs text-[#757575]">
-                                Also
-                              </span>
-                              {program.also.map((label) => (
-                                <Chip key={label}>{label}</Chip>
-                              ))}
-                            </div>
-                          ) : null}
-                          <p className="text-base leading-6 text-[#1d1d1d]">
-                            {program.body}
-                          </p>
-                        </div>
-                        <Button
-                          href={program.href}
-                          size="sm"
-                          className="shrink-0"
-                        >
-                          Learn more
-                          <Icon name="icon-chevron-right.svg" size={16} />
-                        </Button>
-                      </article>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
+          <ProgramDirectory categories={categories} />
         </div>
       </section>
     </PageShell>

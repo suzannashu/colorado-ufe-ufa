@@ -6,7 +6,6 @@ import { Icon } from "./ui";
 const MENUS: Record<string, string[]> = {
   age: ["Infants", "Toddlers under 3", "3 year olds", "4 year olds", "School age"],
   county: ["Adams", "Alamosa", "Arapahoe", "Archuleta", "Baca"],
-  financial: ["Cash assistance", "Child care assistance", "Other financial aid"],
   income: [
     "Unemployed",
     "up to $24,999",
@@ -17,24 +16,32 @@ const MENUS: Record<string, string[]> = {
   support: [
     "Child care",
     "Early learning",
+    "Family resource navigation",
+    "Financial support",
     "Food & nutrition",
-    "Health coverage",
     "Home visits",
     "Mental health support",
+    "Parenting support",
   ],
 };
 
 const FILTERS = [
   { id: "age", label: "Child’s age" },
   { id: "county", label: "County" },
-  { id: "financial", label: "Financial help" },
   { id: "income", label: "Income limits" },
   { id: "support", label: "Support services" },
 ] as const;
 
-export function BrowseFilters() {
+export type FilterSelection = Record<string, string[]>;
+
+export function BrowseFilters({
+  selected,
+  onChange,
+}: {
+  selected: FilterSelection;
+  onChange: (next: FilterSelection) => void;
+}) {
   const [open, setOpen] = useState<string | null>(null);
-  const [selected, setSelected] = useState<Record<string, string[]>>({});
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,13 +64,11 @@ export function BrowseFilters() {
   }, [open]);
 
   function toggleOption(menuId: string, option: string) {
-    setSelected((prev) => {
-      const current = prev[menuId] ?? [];
-      const next = current.includes(option)
-        ? current.filter((o) => o !== option)
-        : [...current, option];
-      return { ...prev, [menuId]: next };
-    });
+    const current = selected[menuId] ?? [];
+    const next = current.includes(option)
+      ? current.filter((o) => o !== option)
+      : [...current, option];
+    onChange({ ...selected, [menuId]: next });
   }
 
   return (
@@ -94,6 +99,8 @@ export function BrowseFilters() {
                     <button
                       key={option}
                       type="button"
+                      role="menuitemcheckbox"
+                      aria-checked={checked}
                       onClick={() => toggleOption(filter.id, option)}
                       className="flex w-full items-center gap-0 text-left text-base text-[#1d1d1d]"
                     >
