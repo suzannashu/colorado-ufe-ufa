@@ -32,9 +32,16 @@ const FILTERS = [
   { id: "support", label: "Support services" },
 ] as const;
 
-export function BrowseFilters() {
+export type FilterSelection = Record<string, string[]>;
+
+export function BrowseFilters({
+  selected,
+  onChange,
+}: {
+  selected: FilterSelection;
+  onChange: (next: FilterSelection) => void;
+}) {
   const [open, setOpen] = useState<string | null>(null);
-  const [selected, setSelected] = useState<Record<string, string[]>>({});
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,13 +64,11 @@ export function BrowseFilters() {
   }, [open]);
 
   function toggleOption(menuId: string, option: string) {
-    setSelected((prev) => {
-      const current = prev[menuId] ?? [];
-      const next = current.includes(option)
-        ? current.filter((o) => o !== option)
-        : [...current, option];
-      return { ...prev, [menuId]: next };
-    });
+    const current = selected[menuId] ?? [];
+    const next = current.includes(option)
+      ? current.filter((o) => o !== option)
+      : [...current, option];
+    onChange({ ...selected, [menuId]: next });
   }
 
   return (
@@ -94,6 +99,8 @@ export function BrowseFilters() {
                     <button
                       key={option}
                       type="button"
+                      role="menuitemcheckbox"
+                      aria-checked={checked}
                       onClick={() => toggleOption(filter.id, option)}
                       className="flex w-full items-center gap-0 text-left text-base text-[#1d1d1d]"
                     >
