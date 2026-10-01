@@ -6,7 +6,6 @@ import { Icon } from "./ui";
 const MENUS: Record<string, string[]> = {
   age: ["Infants", "Toddlers under 3", "3 year olds", "4 year olds", "School age"],
   county: ["Adams", "Alamosa", "Arapahoe", "Archuleta", "Baca"],
-  financial: ["Cash assistance", "Child care assistance", "Other financial aid"],
   income: [
     "Unemployed",
     "up to $24,999",
@@ -29,7 +28,6 @@ const MENUS: Record<string, string[]> = {
 const FILTERS = [
   { id: "age", label: "Child’s age" },
   { id: "county", label: "County" },
-  { id: "financial", label: "Financial help" },
   { id: "income", label: "Income limits" },
   { id: "support", label: "Support services" },
 ] as const;
