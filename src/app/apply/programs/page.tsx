@@ -50,8 +50,8 @@ export default function ApplyProgramsPage() {
   return (
     <ApplyProgramsShell>
       <p className="text-lg text-[#1d1d1d]">
-        If you do not wish to enroll in all the programs you are eligible for,
-        uncheck &quot;Apply to this program&quot; before you continue.
+        If you wish to enroll in the programs you are eligible for, check
+        &quot;Apply to this program&quot; before you continue.
       </p>
 
       <EligibilityCard
@@ -59,7 +59,6 @@ export default function ApplyProgramsPage() {
         beneficiary="Kayleigh Abrams"
         role="Child"
         birthDate="January 1, 2022"
-        applyChecked
         expanded
         criteria={upkCriteria}
       />
@@ -67,7 +66,6 @@ export default function ApplyProgramsPage() {
         title="Colorado Child Care Assistance Program (CCCAP)"
         beneficiary="Karla Abrams"
         role="Parent/Guardian"
-        applyChecked
         expanded
         criteria={cccapCriteria}
       />
@@ -75,7 +73,6 @@ export default function ApplyProgramsPage() {
         title="SafeCare"
         beneficiary="Karla Abrams"
         role="Parent/Guardian"
-        applyChecked
         expanded
         criteria={safeCareCriteria}
       />
@@ -83,7 +80,6 @@ export default function ApplyProgramsPage() {
         title="Child First"
         beneficiary="Karla Abrams"
         role="Parent/Guardian"
-        applyChecked
         expanded
         criteria={loremCriteria}
       />
