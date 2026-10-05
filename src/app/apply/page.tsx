@@ -22,7 +22,7 @@ export default function ApplyPage() {
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
             <Button href="/dashboard/login" variant="secondary">
-              Log in to my dashboard
+              Check my application
             </Button>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function ApplyPage() {
               <Icon name="icon-east-white.svg" size={20} />
             </Button>
             <Button href="/dashboard/login" variant="secondary">
-              Log in to my dashboard
+              Check my application
             </Button>
           </div>
         </div>
