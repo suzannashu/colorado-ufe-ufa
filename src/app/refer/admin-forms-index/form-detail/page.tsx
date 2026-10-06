@@ -69,20 +69,17 @@ export default function HomeVisitingReferralFormPage() {
               <TextField
                 label="Parent / guardian name"
                 value="Greg Aaronson"
-                readOnly
               />
-              <TextField label="Phone" value="(303) 555-8765" readOnly />
+              <TextField label="Phone" value="(303) 555-8765" />
               <TextField
                 label="Email (optional)"
                 value="email@email.com"
-                readOnly
               />
-              <SelectField label="County" value="Arapahoe" readOnly />
-              <TextField label="Zip code" value="80015" readOnly />
+              <SelectField label="County" value="Arapahoe" />
+              <TextField label="Zip code" value="80015" />
               <SelectField
                 label="Preferred language"
                 value="English"
-                readOnly
                 options={[
                   "English",
                   "Chinese",
@@ -99,13 +96,11 @@ export default function HomeVisitingReferralFormPage() {
                 label="Best time to reach them"
                 value="No preference"
                 options={["No preference", "Morning", "Afternoon", "Evening"]}
-                readOnly
               />
               <TextField
                 label="Children’s ages"
                 value="2, 7"
                 hint="e.g. Pregnant, 2 years"
-                readOnly
               />
             </div>
           </section>
