@@ -66,14 +66,23 @@ export default function HomeVisitingReferralFormPage() {
               <Icon name="icon-emergency.svg" size={24} />
             </div>
             <div className="grid grid-cols-2 items-start gap-10">
-              <TextField label="Parent / guardian name" />
-              <TextField label="Phone" />
-              <TextField label="Email (optional)" />
-              <SelectField label="County" value="" />
-              <TextField label="Zip code" />
+              <TextField
+                label="Parent / guardian name"
+                value="Greg Aaronson"
+                readOnly
+              />
+              <TextField label="Phone" value="(303) 555-8765" readOnly />
+              <TextField
+                label="Email (optional)"
+                value="email@email.com"
+                readOnly
+              />
+              <SelectField label="County" value="Arapahoe" readOnly />
+              <TextField label="Zip code" value="80015" readOnly />
               <SelectField
                 label="Preferred language"
                 value="English"
+                readOnly
                 options={[
                   "English",
                   "Chinese",
@@ -90,11 +99,13 @@ export default function HomeVisitingReferralFormPage() {
                 label="Best time to reach them"
                 value="No preference"
                 options={["No preference", "Morning", "Afternoon", "Evening"]}
+                readOnly
               />
               <TextField
                 label="Children’s ages"
-                value=""
+                value="2, 7"
                 hint="e.g. Pregnant, 2 years"
+                readOnly
               />
             </div>
           </section>
@@ -106,37 +117,58 @@ export default function HomeVisitingReferralFormPage() {
               </h3>
               <Icon name="icon-emergency.svg" size={24} />
             </div>
-            <div className="flex flex-col gap-2">
-              {programOptions.map((option) => (
-                <label
-                  key={option}
-                  className="flex items-center gap-2 bg-[#f3f6fa] px-3 py-2"
-                >
-                  <Icon name="icon-checkbox.svg" size={24} />
-                  <span className="text-base text-[#1d1d1d]">{option}</span>
-                </label>
-              ))}
+            <div className="flex flex-col gap-2 opacity-60">
+              {programOptions.map((option) => {
+                const checked = option.startsWith("Nurse-Family Partnership");
+                return (
+                  <div
+                    key={option}
+                    role="checkbox"
+                    aria-checked={checked}
+                    aria-readonly="true"
+                    className="flex items-center gap-2 bg-[#f3f6fa] px-3 py-2"
+                  >
+                    <Icon
+                      name={
+                        checked ? "icon-checkbox-checked.svg" : "icon-checkbox.svg"
+                      }
+                      size={24}
+                    />
+                    <span className="text-base text-[#1d1d1d]">{option}</span>
+                  </div>
+                );
+              })}
             </div>
           </section>
 
-          <section className="flex flex-col gap-3">
+          <section className="flex flex-col gap-3 opacity-60">
             <h3 className="font-heavy text-lg text-[#1d1d1d]">
               Additional notes
             </h3>
             <textarea
-              className="min-h-[127px] w-full border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none"
+              readOnly
+              className="min-h-[127px] w-full cursor-default border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none"
               placeholder="e.g. Family speaks mostly Spanish; new to the area and looking for parenting support"
             />
           </section>
 
-          <label className="flex items-start gap-4 py-4">
-            <Icon name="icon-checkbox.svg" size={24} className="mt-0.5 shrink-0" />
+          <div
+            role="checkbox"
+            aria-checked="true"
+            aria-readonly="true"
+            className="flex items-start gap-4 py-4 opacity-60"
+          >
+            <Icon
+              name="icon-checkbox-checked.svg"
+              size={24}
+              className="mt-0.5 shrink-0"
+            />
             <span className="text-base text-[#1d1d1d]">
               I confirm the family has agreed to be contacted about home visiting
               programs, and that the information above is accurate to the best of
               my knowledge.
             </span>
-          </label>
+          </div>
 
           <div className="text-sm text-[#1d1d1d]">
             <p>
