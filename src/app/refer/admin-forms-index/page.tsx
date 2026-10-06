@@ -93,11 +93,16 @@ export default function ReferFormsPage() {
               </tr>
             </thead>
             <tbody>
-              {referrals.map((row) => (
+              {referrals.map((row, index) => (
                 <tr key={row.name} className="border-b border-[#e4e4e4]">
                   <td className="px-3 py-4">
                     <Link
-                      href="/refer/admin-forms-index/form-detail"
+                      href={
+                        index === 0
+                          ? "/refer/admin-forms-index/form-detail"
+                          : "/refer/admin-forms-index"
+                      }
+                      scroll={false}
                       className="text-[#205c6f] underline"
                     >
                       {row.name}
