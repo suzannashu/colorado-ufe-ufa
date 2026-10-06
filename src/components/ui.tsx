@@ -104,21 +104,27 @@ export function TextField({
   hint,
   prefix,
   className = "",
+  readOnly = false,
 }: {
   label: string;
   value?: string;
   hint?: string;
   prefix?: ReactNode;
   className?: string;
+  readOnly?: boolean;
 }) {
   return (
-    <label className={`flex w-full flex-col gap-2 ${className}`}>
+    <label
+      className={`flex w-full flex-col gap-2 ${readOnly ? "opacity-60" : ""} ${className}`}
+    >
       <span className="text-lg text-[#1d1d1d]">{label}</span>
       <div className="flex items-center gap-2.5 border-b border-[#9e9e9e] bg-[#eee] p-4">
         {prefix}
         <input
           defaultValue={value}
-          className="w-full bg-transparent text-base text-[#1d1d1d] outline-none"
+          readOnly={readOnly}
+          aria-readonly={readOnly || undefined}
+          className={`w-full bg-transparent text-base text-[#1d1d1d] outline-none ${readOnly ? "cursor-default" : ""}`}
         />
       </div>
       {hint ? <span className="text-base text-black">{hint}</span> : null}
@@ -131,20 +137,25 @@ export function SelectField({
   value,
   options,
   className = "",
+  readOnly = false,
 }: {
   label: string;
   value: string;
   options?: string[];
   className?: string;
+  readOnly?: boolean;
 }) {
   return (
-    <label className={`flex min-w-[240px] flex-1 flex-col justify-between gap-2 ${className}`}>
+    <label
+      className={`flex min-w-[240px] flex-1 flex-col justify-between gap-2 ${readOnly ? "opacity-60" : ""} ${className}`}
+    >
       <span className="text-lg text-[#1d1d1d]">{label}</span>
       <div className="relative flex items-center justify-between border-b border-[#9e9e9e] bg-[#eee] p-4">
         {options ? (
           <select
             defaultValue={value}
-            className="w-full appearance-none bg-transparent pr-8 text-base text-[#1d1d1d] outline-none"
+            disabled={readOnly}
+            className="w-full appearance-none bg-transparent pr-8 text-base text-[#1d1d1d] outline-none disabled:cursor-default"
           >
             {options.map((option) => (
               <option key={option} value={option}>
