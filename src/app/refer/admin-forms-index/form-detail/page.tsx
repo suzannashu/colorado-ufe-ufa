@@ -4,7 +4,7 @@ import { FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SpecialistShell } from "@/components/SpecialistShell";
-import { Icon, SelectField, TextField } from "@/components/ui";
+import { Button, Icon, SelectField, TextField } from "@/components/ui";
 
 const programOptions = [
   "Parents as Teachers (PAT) - Early childhood development",
@@ -187,6 +187,9 @@ export default function HomeVisitingReferralFormPage() {
             >
               Back to landing page
             </Link>
+            <Button type="submit" size="sm">
+              Create application from form
+            </Button>
           </div>
         </div>
       </form>
