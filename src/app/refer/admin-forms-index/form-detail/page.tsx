@@ -1,10 +1,12 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SpecialistShell } from "@/components/SpecialistShell";
 import { Button, Icon, SelectField, TextField } from "@/components/ui";
+
+const stageOptions = ["Stage 2 - Contact family", "Stage 3 - Complete"];
 
 const programOptions = [
   "Parents as Teachers (PAT) - Early childhood development",
@@ -16,6 +18,26 @@ const programOptions = [
 
 export default function HomeVisitingReferralFormPage() {
   const router = useRouter();
+  const [stage, setStage] = useState("Stage 1 - Initial review");
+  const [stagesOpen, setStagesOpen] = useState(false);
+  const stagesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onPointerDown(event: MouseEvent) {
+      if (stagesRef.current && !stagesRef.current.contains(event.target as Node)) {
+        setStagesOpen(false);
+      }
+    }
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setStagesOpen(false);
+    }
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -37,22 +59,55 @@ export default function HomeVisitingReferralFormPage() {
         </div>
       </div>
 
-      <div className="flex justify-end border border-[#e0e0e0] bg-white">
-        <button type="button" className="p-3">
-          <Icon name="icon-assignment.svg" size={24} />
-        </button>
-        <button type="button" className="p-3">
-          <Icon name="icon-question-answer.svg" size={24} />
-        </button>
-        <button type="button" className="p-3">
-          <Icon name="icon-folder-open.svg" size={24} />
-        </button>
-        <button type="button" className="p-3">
-          <Icon name="icon-more-vert.svg" size={24} />
-        </button>
+      <div className="flex flex-col gap-4 p-4">
+      <div className="flex items-center justify-between border border-[#e0e0e0] bg-white pl-3">
+        <div ref={stagesRef} className="relative">
+          <button
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded={stagesOpen}
+            onClick={() => setStagesOpen((open) => !open)}
+            className="inline-flex items-center justify-center gap-2 overflow-hidden rounded-[4px] border border-[#205c6f] px-4 py-2.5 text-sm text-[#205c6f]"
+          >
+            {stage}
+            <Icon name="icon-keyboard-arrow-down.svg" size={16} />
+          </button>
+          {stagesOpen ? (
+            <div
+              role="menu"
+              className="absolute left-0 top-full z-20 mt-1 min-w-full overflow-hidden rounded-[4px] border border-[#e0e0e0] bg-white py-1 shadow-md"
+            >
+              {stageOptions.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  role="menuitem"
+                  onClick={() => {
+                    setStage(option);
+                    setStagesOpen(false);
+                  }}
+                  className="block w-full whitespace-nowrap px-4 py-2.5 text-left text-sm text-[#1d1d1d] hover:bg-[#f3f6fa]"
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
+        <div className="flex items-center">
+          <button type="button" className="p-3" aria-label="Reviews">
+            <Icon name="icon-reviews.svg" size={24} />
+          </button>
+          <button type="button" className="p-3" aria-label="Notes">
+            <Icon name="icon-assignment.svg" size={24} />
+          </button>
+          <button type="button" className="p-3" aria-label="More">
+            <Icon name="icon-more-vert.svg" size={24} />
+          </button>
+        </div>
       </div>
 
-      <form onSubmit={onSubmit} className="m-4 border border-[#e0e0e0] bg-white">
+      <form onSubmit={onSubmit} className="border border-[#e0e0e0] bg-white">
         <div className="border-b border-[#e0e0e0] px-6 py-4">
           <h2 className="font-heavy text-2xl text-[#1d1d1d]">Details</h2>
         </div>
@@ -193,6 +248,7 @@ export default function HomeVisitingReferralFormPage() {
           </div>
         </div>
       </form>
+      </div>
     </SpecialistShell>
   );
 }
