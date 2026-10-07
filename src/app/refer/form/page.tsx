@@ -124,14 +124,13 @@ export default function ReferralFormPage() {
               will help the family choose.
             </p>
             <div className="flex flex-col gap-3">
-              {programOptions.map((option, i) => (
+              {programOptions.map((option) => (
                 <label
                   key={option}
                   className="flex items-center gap-3 text-base text-[#1d1d1d]"
                 >
                   <input
                     type="checkbox"
-                    defaultChecked={i < 2}
                     className="size-5 accent-[#205c6f]"
                   />
                   {option}
