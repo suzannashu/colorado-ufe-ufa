@@ -82,18 +82,21 @@ export default function ReferralFormPage() {
             </p>
             <div className="grid grid-cols-2 gap-6">
               <TextField label="Parent / guardian name" value="Greg Aaronson" />
-              <TextField label="Phone" value="(720) 555-0198" />
-              <TextField label="Email (optional)" value="alex.rivera@example.com" />
+              <TextField label="Phone" value="(303) 555-8765" />
+              <TextField label="Email (optional)" value="email@email.com" />
               <label className="flex w-full flex-col gap-2">
                 <span className="text-lg text-[#1d1d1d]">County</span>
-                <select className="w-full border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none">
-                  <option>Denver</option>
+  <select
+  defaultValue="Arapahoe"
+  className="w-full border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none"
+  >
+  <option>Denver</option>
                   <option>Adams</option>
                   <option>Arapahoe</option>
                   <option>Jefferson</option>
                 </select>
               </label>
-              <TextField label="Zip code" value="80205" />
+              <TextField label="Zip code" value="80015" />
               <label className="flex w-full flex-col gap-2">
                 <span className="text-lg text-[#1d1d1d]">Preferred language</span>
                 <select className="w-full border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none">
@@ -104,7 +107,7 @@ export default function ReferralFormPage() {
               <TextField label="Best time to reach them" value="No preference" />
               <TextField
                 label="Children’s ages"
-                value="e.g. Pregnant, 2 years"
+                value="2, 7"
               />
             </div>
           </section>
