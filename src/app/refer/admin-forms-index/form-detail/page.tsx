@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SpecialistShell } from "@/components/SpecialistShell";
 import { Button, Icon, SelectField, TextField } from "@/components/ui";
+import { FormSidePanel, SidePanelKind } from "@/components/FormSidePanel";
 
 const stageOptions = ["Stage 2 - Contact family", "Stage 3 - Complete"];
 
@@ -21,6 +22,17 @@ export default function HomeVisitingReferralFormPage() {
   const [stage, setStage] = useState("Stage 1 - Initial review");
   const [stagesOpen, setStagesOpen] = useState(false);
   const stagesRef = useRef<HTMLDivElement>(null);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelKind, setPanelKind] = useState<SidePanelKind>("reviews");
+
+  function togglePanel(kind: SidePanelKind) {
+    if (panelOpen && panelKind === kind) {
+      setPanelOpen(false);
+      return;
+    }
+    setPanelKind(kind);
+    setPanelOpen(true);
+  }
 
   useEffect(() => {
     function onPointerDown(event: MouseEvent) {
@@ -29,7 +41,10 @@ export default function HomeVisitingReferralFormPage() {
       }
     }
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setStagesOpen(false);
+      if (event.key === "Escape") {
+        setStagesOpen(false);
+        setPanelOpen(false);
+      }
     }
     document.addEventListener("mousedown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -59,7 +74,8 @@ export default function HomeVisitingReferralFormPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 p-4">
+      <div className="flex items-start p-4">
+      <div className="flex min-w-0 flex-1 flex-col gap-4">
       <div className="flex items-center justify-between border border-[#e0e0e0] bg-white pl-3">
         <div ref={stagesRef} className="relative">
           <button
@@ -95,10 +111,24 @@ export default function HomeVisitingReferralFormPage() {
           ) : null}
         </div>
         <div className="flex items-center">
-          <button type="button" className="p-3" aria-label="Reviews">
+          <button
+            type="button"
+            className={`p-3 hover:bg-[#f3f6fa] ${panelOpen && panelKind === "reviews" ? "bg-[#f3f6fa]" : ""}`}
+            aria-label="Reviews"
+            aria-controls="form-side-panel"
+            aria-expanded={panelOpen && panelKind === "reviews"}
+            onClick={() => togglePanel("reviews")}
+          >
             <Icon name="icon-reviews.svg" size={24} />
           </button>
-          <button type="button" className="p-3" aria-label="Notes">
+          <button
+            type="button"
+            className={`p-3 hover:bg-[#f3f6fa] ${panelOpen && panelKind === "notes" ? "bg-[#f3f6fa]" : ""}`}
+            aria-label="Notes"
+            aria-controls="form-side-panel"
+            aria-expanded={panelOpen && panelKind === "notes"}
+            onClick={() => togglePanel("notes")}
+          >
             <Icon name="icon-assignment.svg" size={24} />
           </button>
           <button type="button" className="p-3" aria-label="More">
@@ -248,6 +278,12 @@ export default function HomeVisitingReferralFormPage() {
           </div>
         </div>
       </form>
+      </div>
+      <FormSidePanel
+        open={panelOpen}
+        kind={panelKind}
+        onClose={() => setPanelOpen(false)}
+      />
       </div>
     </SpecialistShell>
   );
