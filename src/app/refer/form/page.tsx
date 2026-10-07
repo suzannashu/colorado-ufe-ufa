@@ -151,8 +151,8 @@ export default function ReferralFormPage() {
               Optional context that would help a specialist support this family.
             </p>
             <textarea
-              className="min-h-28 w-full border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none"
-              defaultValue="e.g. Family speaks mostly Spanish; new to the area and looking for parenting support"
+              className="min-h-28 w-full border-b border-[#9e9e9e] bg-[#eee] p-4 text-base text-[#1d1d1d] outline-none placeholder:text-[#1d1d1d]/50"
+              placeholder="e.g. Family speaks mostly Spanish; new to the area and looking for parenting support"
             />
           </section>
 
