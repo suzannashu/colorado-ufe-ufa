@@ -4,23 +4,27 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SpecialistShell } from "@/components/SpecialistShell";
-import { Button, Icon, SelectField, TextField } from "@/components/ui";
+import { Icon, SelectField, TextField } from "@/components/ui";
+import { FormSidePanel, SidePanelKind } from "@/components/FormSidePanel";
 
 const stageOptions = ["Stage 2 - Contact family", "Stage 3 - Complete"];
-
-const programOptions = [
-  "Parents as Teachers (PAT) - Early childhood development",
-  "Home Instruction for Parents of Preschool Youngsters (HIPPY) - School readiness",
-  "Nurse-Family Partnership (NFP) - Maternal & infant health",
-  "Child First - Family mental health",
-  "SafeCare - Safe & nurturing homes",
-];
 
 export default function HomeVisitingReferralFormPage() {
   const router = useRouter();
   const [stage, setStage] = useState("Stage 1 - Initial review");
   const [stagesOpen, setStagesOpen] = useState(false);
   const stagesRef = useRef<HTMLDivElement>(null);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelKind, setPanelKind] = useState<SidePanelKind>("reviews");
+
+  function togglePanel(kind: SidePanelKind) {
+    if (panelOpen && panelKind === kind) {
+      setPanelOpen(false);
+      return;
+    }
+    setPanelKind(kind);
+    setPanelOpen(true);
+  }
 
   useEffect(() => {
     function onPointerDown(event: MouseEvent) {
@@ -29,7 +33,10 @@ export default function HomeVisitingReferralFormPage() {
       }
     }
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setStagesOpen(false);
+      if (event.key === "Escape") {
+        setStagesOpen(false);
+        setPanelOpen(false);
+      }
     }
     document.addEventListener("mousedown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -59,7 +66,8 @@ export default function HomeVisitingReferralFormPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 p-4">
+      <div className="flex items-start p-4">
+      <div className="flex min-w-0 flex-1 flex-col gap-4">
       <div className="flex items-center justify-between border border-[#e0e0e0] bg-white pl-3">
         <div ref={stagesRef} className="relative">
           <button
@@ -95,10 +103,24 @@ export default function HomeVisitingReferralFormPage() {
           ) : null}
         </div>
         <div className="flex items-center">
-          <button type="button" className="p-3" aria-label="Reviews">
+          <button
+            type="button"
+            className={`p-3 hover:bg-[#f3f6fa] ${panelOpen && panelKind === "reviews" ? "bg-[#f3f6fa]" : ""}`}
+            aria-label="Reviews"
+            aria-controls="form-side-panel"
+            aria-expanded={panelOpen && panelKind === "reviews"}
+            onClick={() => togglePanel("reviews")}
+          >
             <Icon name="icon-reviews.svg" size={24} />
           </button>
-          <button type="button" className="p-3" aria-label="Notes">
+          <button
+            type="button"
+            className={`p-3 hover:bg-[#f3f6fa] ${panelOpen && panelKind === "notes" ? "bg-[#f3f6fa]" : ""}`}
+            aria-label="Notes"
+            aria-controls="form-side-panel"
+            aria-expanded={panelOpen && panelKind === "notes"}
+            onClick={() => togglePanel("notes")}
+          >
             <Icon name="icon-assignment.svg" size={24} />
           </button>
           <button type="button" className="p-3" aria-label="More">
@@ -155,39 +177,7 @@ export default function HomeVisitingReferralFormPage() {
               <TextField
                 label="Children’s ages"
                 value="2, 7"
-                hint="e.g. Pregnant, 2 years"
               />
-            </div>
-          </section>
-
-          <section className="flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <h3 className="font-heavy text-lg text-[#1d1d1d]">
-                Program interest
-              </h3>
-              <Icon name="icon-emergency.svg" size={24} />
-            </div>
-            <div className="flex flex-col gap-2 opacity-60">
-              {programOptions.map((option) => {
-                const checked = option.startsWith("Nurse-Family Partnership");
-                return (
-                  <div
-                    key={option}
-                    role="checkbox"
-                    aria-checked={checked}
-                    aria-readonly="true"
-                    className="flex items-center gap-2 bg-[#f3f6fa] px-3 py-2"
-                  >
-                    <Icon
-                      name={
-                        checked ? "icon-checkbox-checked.svg" : "icon-checkbox.svg"
-                      }
-                      size={24}
-                    />
-                    <span className="text-base text-[#1d1d1d]">{option}</span>
-                  </div>
-                );
-              })}
             </div>
           </section>
 
@@ -235,19 +225,22 @@ export default function HomeVisitingReferralFormPage() {
             </p>
           </div>
 
-          <div className="flex items-center justify-between pb-4">
+          <div className="flex items-center pb-4">
             <Link
               href="/refer"
               className="text-sm text-[#205c6f] underline underline-offset-2"
             >
               Back to landing page
             </Link>
-            <Button type="submit" size="sm">
-              Create application from form
-            </Button>
           </div>
         </div>
       </form>
+      </div>
+      <FormSidePanel
+        open={panelOpen}
+        kind={panelKind}
+        onClose={() => setPanelOpen(false)}
+      />
       </div>
     </SpecialistShell>
   );
