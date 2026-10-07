@@ -13,20 +13,20 @@ const columns = [
 ];
 
 const referrals = [
-  { name: "Greg Aaronson", id: "5578773", referrer: "Margarita Zapata Audley", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Awaiting documents" },
-  { name: "Jennifer Arlen", id: "7383617", referrer: "Cynthia Hastings", email: "email@email.com", assignedTo: "Follow-up Team", status: "In progress", stage: "Contact family" },
-  { name: "Erizku Awol", id: "2937019", referrer: "Robert Davis", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
-  { name: "Carl Banks", id: "4386775", referrer: "Amanda Martinez", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Enrolled" },
-  { name: "Lily Batacan", id: "6487846", referrer: "Elena Kaczynski", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Contact family" },
-  { name: "Absame Bilan", id: "1863692", referrer: "Camila Gonzales", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
-  { name: "Reginald Brown", id: "1863692", referrer: "Isabella Torres", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Enrolled" },
-  { name: "Desiree Campilongo", id: "2418488", referrer: "Jenna Avery", email: "email@email.com", assignedTo: "Follow-up Team", status: "In progress", stage: "Contact family" },
-  { name: "Min-Jun Cheong", id: "7981334", referrer: "Karen O'Connor", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
-  { name: "Erika Diaz Guzman", id: "2896711", referrer: "Denny Miller", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Awaiting documents" },
-  { name: "Noah Domingo", id: "4593779", referrer: "Ashley White", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Enrolled" },
-  { name: "Cherie Ellis Thomas", id: "3857201", referrer: "Leo Jacobo", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
-  { name: "Fares Feghali", id: "4520957", referrer: "Chloe Tomlinson", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
-  { name: "Landra Furness", id: "6613037", referrer: "Sofia Watson-Lopez", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
+  { name: "Greg Aaronson", id: "5578773", referrer: "Margarita Zapata Audley", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Stage 1 - Initial review" },
+  { name: "Jennifer Arlen", id: "7383617", referrer: "Cynthia Hastings", email: "email@email.com", assignedTo: "Follow-up Team", status: "In progress", stage: "Stage 2 - Contact family" },
+  { name: "Erizku Awol", id: "2937019", referrer: "Robert Davis", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "Stage 3 - Complete" },
+  { name: "Carl Banks", id: "4386775", referrer: "Amanda Martinez", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Stage 3 - Complete" },
+  { name: "Lily Batacan", id: "6487846", referrer: "Elena Kaczynski", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Stage 1 - Initial review" },
+  { name: "Absame Bilan", id: "1863692", referrer: "Camila Gonzales", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "Stage 3 - Complete" },
+  { name: "Reginald Brown", id: "1863692", referrer: "Isabella Torres", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Stage 3 - Complete" },
+  { name: "Desiree Campilongo", id: "2418488", referrer: "Jenna Avery", email: "email@email.com", assignedTo: "Follow-up Team", status: "In progress", stage: "Stage 2 - Contact family" },
+  { name: "Min-Jun Cheong", id: "7981334", referrer: "Karen O'Connor", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "Stage 3 - Complete" },
+  { name: "Erika Diaz Guzman", id: "2896711", referrer: "Denny Miller", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Stage 1 - Initial review" },
+  { name: "Noah Domingo", id: "4593779", referrer: "Ashley White", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Stage 3 - Complete" },
+  { name: "Cherie Ellis Thomas", id: "3857201", referrer: "Leo Jacobo", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Stage 2 - Contact family" },
+  { name: "Fares Feghali", id: "4520957", referrer: "Chloe Tomlinson", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Stage 2 - Contact family" },
+  { name: "Landra Furness", id: "6613037", referrer: "Sofia Watson-Lopez", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "Stage 3 - Complete" },
 ];
 
 export default function ReferFormsPage() {
