@@ -13,7 +13,7 @@ const columns = [
 ];
 
 const referrals = [
-  { name: "Greg Aaronson", id: "5578773", referrer: "Jeff Smith", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Awaiting documents" },
+  { name: "Greg Aaronson", id: "5578773", referrer: "Margarita Zapata Audley", email: "email@email.com", assignedTo: "NFP Intake Team", status: "In progress", stage: "Awaiting documents" },
   { name: "Jennifer Arlen", id: "7383617", referrer: "Cynthia Hastings", email: "email@email.com", assignedTo: "Follow-up Team", status: "In progress", stage: "Contact family" },
   { name: "Erizku Awol", id: "2937019", referrer: "Robert Davis", email: "email@email.com", assignedTo: "NFP Intake Team", status: "Submitted", stage: "" },
   { name: "Carl Banks", id: "4386775", referrer: "Amanda Martinez", email: "email@email.com", assignedTo: "Follow-up Team", status: "Submitted", stage: "Enrolled" },
