@@ -40,12 +40,6 @@ const programs: Program[] = [
         "Parent/guardian must be working, looking for work, or attending school/training",
         "Verified state residency and identity",
       ],
-      [
-        "Children must be under 13 years of age",
-        "Household income falls below 130% of federal poverty line",
-        "Parent/guardian must be working, looking for work, or attending school/training",
-        "Verified state residency and identity",
-      ],
     ],
   },
   {

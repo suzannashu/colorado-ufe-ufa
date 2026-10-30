@@ -72,7 +72,7 @@ export default function BeforeYouApplyPage() {
       </div>
       <div className="flex justify-center py-10">
         <Button href="/apply/pre-app">
-          Start my application
+          Continue
           <Icon name="icon-east-white-3.svg" size={20} />
         </Button>
       </div>

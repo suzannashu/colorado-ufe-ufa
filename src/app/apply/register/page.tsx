@@ -88,7 +88,7 @@ export default function ApplyRegisterPage() {
               Create my account
             </Button>
             <Button
-              href="/apply/before-you-apply"
+              href="/apply/select-programs"
               variant="secondary"
               className="w-[420px] justify-center whitespace-nowrap"
             >
