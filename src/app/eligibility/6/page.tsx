@@ -428,40 +428,25 @@ export default function EligibilityResults() {
                 NOT ELIGIBLE RIGHT NOW
               </p>
               <h2 className="font-heavy text-[28px] leading-10">
-                You are not currently eligible for these programs
+                Explore other programs
               </h2>
               <p className="max-w-[852px] text-lg leading-6">
-                Although you’re not currently eligible, changes in your child
-                care or household situation could make you eligible later. If
-                it does, we encourage you to apply again.
+                There are other programs available to Colorado families.
+                Although your answers didn’t identify these as a current
+                eligibility match, changes in your child care or household
+                situation could make you eligible later. If it does, we
+                encourage you to apply again.
               </p>
             </div>
 
-            {later.map((program) => (
-              <article
-                key={program.title}
-                className="flex flex-col gap-4 rounded-md border border-[#e0e0e0] p-6"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex min-w-0 flex-col gap-3">
-                    <h3 className="font-heavy text-lg leading-6 text-[#1d1d1d]">
-                      {program.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {program.categories.map((category, index) => (
-                        <Chip key={`${category}-${index}`} size="xs">
-                          {category}
-                        </Chip>
-                      ))}
-                    </div>
-                  </div>
-                  <VisitWebsite href={program.href} />
-                </div>
-                <p className="text-base leading-6 text-[#1d1d1d]">
-                  {program.description}
-                </p>
-              </article>
-            ))}
+            <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-[#e0e0e0] p-4 sm:flex-row sm:items-center">
+              <p className="text-base text-[#1d1d1d]">
+                Check back later if your situation changes
+              </p>
+              <Button href="/browse" variant="secondary">
+                Browse all programs
+              </Button>
+            </div>
           </div>
         </div>
       </section>
