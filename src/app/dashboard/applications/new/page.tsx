@@ -47,7 +47,7 @@ export default function NewApplicationModalPage() {
               Check my eligibility
             </Button>
             <Button href="/dashboard/review" size="sm">
-              Quick apply
+              Apply now
             </Button>
           </div>
         </div>
