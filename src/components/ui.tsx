@@ -90,9 +90,21 @@ export function ImgPlaceholder({
   );
 }
 
-export function Chip({ children }: { children: ReactNode }) {
+export function Chip({
+  children,
+  size = "md",
+}: {
+  children: ReactNode;
+  size?: "md" | "xs";
+}) {
+  const sizes = {
+    md: "px-2 py-1 text-sm leading-[18px]",
+    xs: "px-2 py-0.5 text-xs leading-4",
+  };
   return (
-    <span className="inline-flex w-fit shrink-0 items-center rounded-full bg-[rgba(32,92,111,0.12)] px-2 py-1 text-sm text-[#205c6f]">
+    <span
+      className={`inline-flex w-fit shrink-0 items-center rounded-full bg-[rgba(32,92,111,0.12)] text-[#205c6f] ${sizes[size]}`}
+    >
       {children}
     </span>
   );

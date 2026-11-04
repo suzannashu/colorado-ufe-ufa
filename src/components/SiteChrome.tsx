@@ -10,9 +10,11 @@ const links = [
 export function SiteHeader({
   active,
   bordered = false,
+  showQuickApply = true,
 }: {
   active?: "browse" | "eligibility" | "refer";
   bordered?: boolean;
+  showQuickApply?: boolean;
 }) {
   return (
     <header
@@ -51,12 +53,14 @@ export function SiteHeader({
           </nav>
 
           <div className="flex shrink-0 items-center gap-6">
-            <Link
-              href="/apply"
-              className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
-            >
-              Quick apply
-            </Link>
+            {showQuickApply ? (
+              <Link
+                href="/apply"
+                className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
+              >
+                Quick apply
+              </Link>
+            ) : null}
             <button
               type="button"
               className="flex items-center gap-2 rounded-[4px] p-2 text-[15px] text-[#1d1d1d]"
@@ -136,16 +140,22 @@ export function PageShell({
   children,
   active,
   borderedHeader = false,
+  showQuickApply = true,
   className = "bg-[#f3f6fa]",
 }: {
   children: React.ReactNode;
   active?: "browse" | "eligibility" | "refer";
   borderedHeader?: boolean;
+  showQuickApply?: boolean;
   className?: string;
 }) {
   return (
     <div className={`flex min-h-screen w-full flex-col ${className}`}>
-      <SiteHeader active={active} bordered={borderedHeader} />
+      <SiteHeader
+        active={active}
+        bordered={borderedHeader}
+        showQuickApply={showQuickApply}
+      />
       <main className="w-full flex-1">{children}</main>
       <SiteFooter />
     </div>
