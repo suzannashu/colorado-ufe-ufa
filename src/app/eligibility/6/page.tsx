@@ -71,18 +71,124 @@ const elsewhere = [
 
 const later = [
   {
+    title: "Early Head Start",
+    categories: ["Early learning", "Mental health support"],
+    href: "/browse",
+    description:
+      "Supports pregnant women, infants and toddlers with early learning, health and family services.",
+  },
+  {
+    title: "Early Intervention Colorado – IDEA Part C (Intake, Evaluation, Services)",
+    categories: ["Early learning", "Home visits"],
+    href: "/browse",
+    description:
+      "Provides evaluations and early support for infants and toddlers with developmental delays.",
+  },
+  {
+    title: "Head Start Preschool",
+    categories: ["Early learning", "Financial support"],
+    href: "/browse",
+    description:
+      "Head Start helps children ages 3 to 5 from low-income families be successful learners. The program supports their learning and growth by providing education, health, nutrition, and family services. Migrant and Seasonal Head Start provides education and support services to low-income children of migrant and seasonal workers and their families.",
+  },
+  {
+    title: "Imagination Library",
+    categories: ["Early learning"],
+    href: "/browse",
+    description:
+      "Delivers free books to children to encourage early reading and a love of learning.",
+  },
+  {
+    title: "Incredible Years",
+    categories: ["Early learning", "Mental health support"],
+    href: "/browse",
+    description:
+      "Helps parents build positive relationships and support children's behavior and social-emotional skills.",
+  },
+  {
+    title: "Child Care Locator",
+    categories: ["Child care", "Early learning"],
+    href: "/browse",
+    description:
+      "Helps families find and compare child care options that meet their needs.",
+  },
+  {
+    title: "Family Connects",
+    categories: ["Home visits", "Parenting support"],
+    href: "/browse",
+    description:
+      "Provides nurse home visits, newborn care guidance and connections to community resources.",
+  },
+  {
+    title: "Nurse-Family Partnership (NFP)",
+    categories: ["Home visits", "Early learning"],
+    href: "/browse",
+    description:
+      "Provides nurse home visits to first-time parents during pregnancy and their child's early years.",
+  },
+  {
+    title: "Parents as Teachers (PAT)",
+    categories: ["Home visits", "Early learning"],
+    href: "/browse",
+    description:
+      "Offers home visits, parenting guidance and resources to support children's health, learning and development.",
+  },
+  {
+    title: "SafeCare Colorado (SCC)",
+    categories: ["Home visits", "Parenting support"],
+    href: "/browse",
+    description:
+      "Helps families build parenting skills, support child health and create safer homes.",
+  },
+  {
     title: "Circle of Parents / Circle of Fathers",
-    categories: ["Category name", "Category name"],
+    categories: ["Parenting support"],
     href: "/browse",
     description:
       "Circle of Parents offers free peer support groups for parents and caregivers. These groups provide a safe space to share experiences, celebrate successes, and find helpful resources. Meetings help to build connection, confidence, and knowledge about parenting.",
   },
   {
-    title: "Head Start Preschool",
-    categories: ["Category name", "Category name"],
+    title: "Colorado Fatherhood Program",
+    categories: ["Parenting support", "Financial support"],
     href: "/browse",
     description:
-      "Head Start helps children ages 3 to 5 from low-income families be successful learners. The program supports their learning and growth by providing education, health, nutrition, and family services. Migrant and Seasonal Head Start provides education and support services to low-income children of migrant and seasonal workers and their families.",
+      "Helps fathers strengthen parenting skills and build positive relationships with their children.",
+  },
+  {
+    title: "Colorado Works – TANF",
+    categories: ["Parenting support", "Financial support"],
+    href: "/browse",
+    description:
+      "Offers financial assistance and employment support to eligible families with children.",
+  },
+  {
+    title: "Nurturing Parents/Nurturing Fathers",
+    categories: ["Parenting support"],
+    href: "/browse",
+    description:
+      "Helps parents and fathers build positive parenting skills and strengthen family relationships.",
+  },
+  {
+    title:
+      "Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)",
+    categories: ["Food and nutrition", "Family resource navigation"],
+    href: "/browse",
+    description:
+      "Provides healthy foods, nutrition education and breastfeeding support for eligible women, infants and children.",
+  },
+  {
+    title: "Supplemental Nutrition Assistance Program (SNAP)",
+    categories: ["Food and nutrition", "Financial support"],
+    href: "/browse",
+    description:
+      "Provides monthly food benefits to eligible low-income individuals and families to help them buy groceries and meet nutritional needs.",
+  },
+  {
+    title: "Family Resource Centers",
+    categories: ["Family resource navigation", "Parenting support"],
+    href: "/browse",
+    description:
+      "Connect families with local resources, services and support, including help with basic needs, parenting and family well-being.",
   },
 ];
 
@@ -202,7 +308,7 @@ export default function EligibilityResults() {
               targetId="apply-elsewhere"
             />
             <QuickLink
-              count={2}
+              count={later.length}
               title="Check back later"
               detail="If your situation changes"
               targetId="check-later"
