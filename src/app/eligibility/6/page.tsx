@@ -364,7 +364,7 @@ export default function EligibilityResults() {
             ))}
           </div>
 
-          <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-[#e0e0e0] bg-[#f3f6fa] p-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-[#e0e0e0] p-4 sm:flex-row sm:items-center">
             <p className="flex flex-wrap items-center gap-2 text-[#1d1d1d]" aria-live="polite">
               <span className="font-heavy text-lg">{selectedCount} of 4</span>
               <span className="text-base">
@@ -439,7 +439,7 @@ export default function EligibilityResults() {
               </p>
             </div>
 
-            <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-[#e0e0e0] bg-[#f3f6fa] p-4 sm:flex-row sm:items-center">
+            <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-[#e0e0e0] p-4 sm:flex-row sm:items-center">
               <p className="text-base text-[#1d1d1d]">
                 Check back later if your situation changes
               </p>
