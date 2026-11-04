@@ -58,7 +58,7 @@ export function SiteHeader({
                 href="/apply"
                 className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
               >
-                Quick apply
+                Apply now
               </Link>
             ) : null}
             <button
