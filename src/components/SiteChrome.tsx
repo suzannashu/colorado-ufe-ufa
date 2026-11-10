@@ -7,20 +7,15 @@ const links = [
   { href: "/refer", label: "Refer a family", key: "refer" },
 ] as const;
 
-type ChromeTheme = "teal" | "navy";
-
 export function SiteHeader({
   active,
   bordered = false,
   showQuickApply = true,
-  theme = "teal",
 }: {
   active?: "browse" | "eligibility" | "refer";
   bordered?: boolean;
   showQuickApply?: boolean;
-  theme?: ChromeTheme;
 }) {
-  const navy = theme === "navy";
   return (
     <header
       className={`w-full bg-white ${bordered ? "border-b border-[#e0e0e0]" : ""}`}
@@ -36,14 +31,12 @@ export function SiteHeader({
         </Link>
 
         <div className="flex min-w-0 flex-1 items-center justify-end gap-10 pl-8 lg:justify-between lg:pl-16">
-          <nav
-            className={`hidden items-center gap-10 text-base md:flex ${navy ? "text-[#1d1d1d]" : "text-black"}`}
-          >
+          <nav className="hidden items-center gap-10 text-base text-black md:flex">
             {links.map((link) =>
               active === link.key ? (
                 <span
                   key={link.href}
-                  className={`rounded-2xl px-3 py-2 ${navy ? "bg-[rgba(54,58,97,0.12)]" : "bg-[rgba(32,92,111,0.2)]"}`}
+                  className="rounded-2xl bg-[rgba(32,92,111,0.2)] px-3 py-2"
                 >
                   {link.label}
                 </span>
@@ -63,11 +56,7 @@ export function SiteHeader({
             {showQuickApply ? (
               <Link
                 href="/apply"
-                className={
-                  navy
-                    ? "rounded-[6px] bg-[#363a61] px-4 py-2.5 text-sm text-white hover:bg-[#2b2e4e]"
-                    : "rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
-                }
+                className="rounded-[4px] bg-[#205c6f] px-4 py-2.5 text-sm text-white"
               >
                 Apply now
               </Link>
@@ -87,16 +76,11 @@ export function SiteHeader({
   );
 }
 
-export function SiteFooter({ theme = "teal" }: { theme?: ChromeTheme }) {
-  const navy = theme === "navy";
+export function SiteFooter() {
   return (
-    <footer
-      className={`w-full text-white ${navy ? "bg-[#363a61]" : "bg-[#205c6f]"}`}
-    >
+    <footer className="w-full bg-[#205c6f] text-white">
       <div className="mx-auto flex w-full max-w-[1440px] items-end justify-between p-[60px]">
-        <div
-          className={`flex w-[296px] flex-col gap-4 text-base ${navy ? "leading-[normal]" : ""}`}
-        >
+        <div className="flex w-[296px] flex-col gap-4 text-base">
           <p className="font-heavy">EXPLORE</p>
           <Link href="/browse" className="hover:underline">
             All programs
@@ -112,29 +96,19 @@ export function SiteFooter({ theme = "teal" }: { theme?: ChromeTheme }) {
 
         <div className="flex flex-col items-end gap-6">
           <div className="flex w-[165px] flex-col items-end gap-1.5">
-            <p
-              className={`w-full text-right text-base tracking-[3.36px] ${navy ? "leading-[normal]" : ""}`}
-            >
+            <p className="w-full text-right text-base tracking-[3.36px]">
               POWERED BY
             </p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={
-                navy
-                  ? "/assets/hifi-logo-bridgecare.svg"
-                  : "/assets/logo-bridgecare.svg"
-              }
+              src="/assets/logo-bridgecare.svg"
               alt="BridgeCare"
               className="h-[31px] w-[165px]"
             />
           </div>
-          <div
-            className={`flex items-center gap-3 text-sm ${navy ? "leading-[normal]" : ""}`}
-          >
+          <div className="flex items-center gap-3 text-sm">
             <span>Terms of service</span>
-            <span className={`text-base ${navy ? "leading-[normal]" : ""}`}>
-              |
-            </span>
+            <span className="text-base">|</span>
             <span>Privacy Policy</span>
           </div>
         </div>
@@ -168,14 +142,12 @@ export function PageShell({
   borderedHeader = false,
   showQuickApply = true,
   className = "bg-[#f3f6fa]",
-  theme = "teal",
 }: {
   children: React.ReactNode;
   active?: "browse" | "eligibility" | "refer";
   borderedHeader?: boolean;
   showQuickApply?: boolean;
   className?: string;
-  theme?: ChromeTheme;
 }) {
   return (
     <div className={`flex min-h-screen w-full flex-col ${className}`}>
@@ -183,10 +155,9 @@ export function PageShell({
         active={active}
         bordered={borderedHeader}
         showQuickApply={showQuickApply}
-        theme={theme}
       />
       <main className="w-full flex-1">{children}</main>
-      <SiteFooter theme={theme} />
+      <SiteFooter />
     </div>
   );
 }

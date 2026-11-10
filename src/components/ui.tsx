@@ -1,27 +1,15 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-type Variant =
-  | "primary"
-  | "secondary"
-  | "ghost"
-  | "link"
-  | "navy"
-  | "navy-outline"
-  | "navy-ghost";
+type Variant = "primary" | "secondary" | "ghost" | "link";
 
 const styles: Record<Variant, string> = {
   primary:
-    "rounded-[4px] bg-[#205c6f] text-white hover:bg-[#1a4d5c] border border-transparent",
+    "bg-[#205c6f] text-white hover:bg-[#1a4d5c] border border-transparent",
   secondary:
-    "rounded-[4px] bg-white text-[#205c6f] border border-[#205c6f] hover:bg-[#f3f6fa]",
-  ghost: "rounded-[4px] bg-white text-[#205c6f] border-0 hover:bg-[#f3f6fa]",
-  link: "rounded-[4px] bg-transparent text-[#205c6f] border-0 p-0 h-auto",
-  navy: "rounded-[6px] bg-[#363a61] text-white hover:bg-[#2b2e4e] border-0",
-  "navy-outline":
-    "rounded-[6px] bg-white text-[#363a61] border-2 border-[#363a61] hover:bg-[#f3f6fa]",
-  "navy-ghost":
-    "rounded-[4px] bg-transparent text-[#363a61] border-0 hover:bg-[rgba(54,58,97,0.08)]",
+    "bg-white text-[#205c6f] border border-[#205c6f] hover:bg-[#f3f6fa]",
+  ghost: "bg-white text-[#205c6f] border-0 hover:bg-[#f3f6fa]",
+  link: "bg-transparent text-[#205c6f] border-0 p-0 h-auto",
 };
 
 export function Button({
@@ -46,7 +34,7 @@ export function Button({
     md: "px-8 py-[18px] text-base gap-2 h-14",
     lg: "px-8 py-[18px] text-base gap-2 h-14",
   };
-  const cls = `inline-flex items-center justify-center font-medium transition-colors ${styles[variant]} ${variant === "link" ? "" : sizes[size]} ${className}`;
+  const cls = `inline-flex items-center justify-center rounded-[4px] font-medium transition-colors ${styles[variant]} ${variant === "link" ? "" : sizes[size]} ${className}`;
 
   if (href) {
     return (
@@ -105,23 +93,17 @@ export function ImgPlaceholder({
 export function Chip({
   children,
   size = "md",
-  tone = "teal",
 }: {
   children: ReactNode;
   size?: "md" | "xs";
-  tone?: "teal" | "navy";
 }) {
   const sizes = {
     md: "px-2 py-1 text-sm leading-[18px]",
     xs: "px-2 py-0.5 text-xs leading-4",
   };
-  const tones = {
-    teal: "bg-[rgba(32,92,111,0.12)] text-[#205c6f]",
-    navy: "bg-[rgba(54,58,97,0.12)] text-[#363a61]",
-  };
   return (
     <span
-      className={`inline-flex w-fit shrink-0 items-center rounded-full ${tones[tone]} ${sizes[size]}`}
+      className={`inline-flex w-fit shrink-0 items-center rounded-full bg-[rgba(32,92,111,0.12)] text-[#205c6f] ${sizes[size]}`}
     >
       {children}
     </span>
